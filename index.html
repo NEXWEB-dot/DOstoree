@@ -10,44 +10,42 @@
 </head>
 <body>
 
-  <!-- Announcement Bar -->
+  <!-- Announcement Bar (Animated Ticker) -->
   <div class="announcement-bar">
-    Free delivery on orders above Rs. 3,000 &nbsp;|&nbsp; Cash on Delivery available nationwide
+    <div class="announcement-track" id="announcementTrack">
+      <!-- Content populated by JS for infinite loop -->
+    </div>
   </div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
       <a href="#" class="nav-logo">
-        <img src="images/image (38).jpg" alt="DO Store">
+        <img src="images/image (38).jpg" alt="DO Store Logo">
+        <span class="nav-logo-text">DO Store</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#" class="active">Home</a></li>
-        <li><a href="#products">Catalog</a></li>
-        <li><a href="#products">Football Shirts</a></li>
-        <li><a href="#">Shorts</a></li>
-        <li><a href="#">Shop for Kids</a></li>
-        <li><a href="#">Casual / Winter Collection</a></li>
-        <li><a href="#">Footballs</a></li>
-        <li><a href="#">Size Chart</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#">Return / Exchange Policy</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#bestsellers">Best Sellers</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="nav-action-btn" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
         </button>
         <button class="nav-action-btn" aria-label="Account">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
           </svg>
         </button>
         <button class="nav-action-btn" aria-label="Cart">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
           </svg>
           <span class="cart-count">0</span>
@@ -61,34 +59,111 @@
     </div>
   </nav>
 
-  <!-- Hero Banner -->
+  <!-- Hero Cinematic -->
   <section class="hero">
-    <div class="hero-bg">
-      <img src="images/hero-stadium.jpg" alt="Football action">
+    <div class="hero-collage">
+      <img src="images/746927377_18094702874095746_8217654202578146858_n.jpg" class="hero-collage-img" alt="Product">
+      <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" class="hero-collage-img" alt="Product">
+      <img src="images/image (34).jpg" class="hero-collage-img" alt="Product">
+      <img src="images/image (35).jpg" class="hero-collage-img" alt="Product">
+      <img src="images/image (36).jpg" class="hero-collage-img" alt="Product">
+      <img src="images/image (37).jpg" class="hero-collage-img" alt="Product">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Browse our latest products</h1>
-      <a href="#products" class="hero-btn">Shop all</a>
+      <span class="hero-eyebrow">Season 25/26 Available Now</span>
+      <h1 class="hero-title">Wear Your <strong>Club's Colours</strong></h1>
+      <p class="hero-subtitle">Premium quality football shirts, retro classics, and exclusive editions delivered straight to your door across Pakistan.</p>
+      <div class="hero-ctas">
+        <a href="shop.html" class="btn-primary">Shop Collection</a>
+        <a href="#categories" class="btn-secondary">View Categories</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Brand Ticker -->
+  <div class="marquee-strip">
+    <div class="marquee-track" id="marqueeTrack">
+      <!-- JS injected -->
+    </div>
+  </div>
+
+  <!-- Category Grid -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-header-left">
+          <span class="section-eyebrow">Explore</span>
+          <h2 class="section-title">Shop by <strong>Category</strong></h2>
+        </div>
+      </div>
+      <div class="categories-grid stagger-children">
+        
+        <div class="category-card featured fade-in" onclick="window.location.href='#featured'">
+          <img src="images/image (37).jpg" class="category-card-img" alt="Club Jerseys">
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <span class="category-tag">Featured</span>
+            <h3 class="category-name">Club Jerseys</h3>
+            <span class="category-cta">Explore Collection <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+
+        <div class="category-card fade-in">
+          <img src="images/746927377_18094702874095746_8217654202578146858_n.jpg" class="category-card-img" alt="National Teams">
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <span class="category-tag">Global</span>
+            <h3 class="category-name">National Teams</h3>
+            <span class="category-cta">Shop Now <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+
+        <div class="category-card fade-in">
+          <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" class="category-card-img" alt="Kids Collection">
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <span class="category-tag">Youth</span>
+            <h3 class="category-name">Kids Edition</h3>
+            <span class="category-cta">Shop Now <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- Featured Products -->
-  <section class="section" id="products">
+  <section class="section section-white" id="featured">
     <div class="container">
-      <div class="section-header centered-header fade-in">
-        <h2 class="section-title">Featured Products</h2>
+      <div class="section-header fade-in">
+        <div class="section-header-left">
+          <span class="section-eyebrow">Curated Selection</span>
+          <h2 class="section-title">New <strong>Arrivals</strong></h2>
+          <p class="section-desc">Fresh off the press. The latest kits for the upcoming season, featuring premium detailing and authentic cuts.</p>
+        </div>
+        <a href="shop.html" class="section-link">View All Items <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-      <div class="products-carousel fade-in">
+
+      <div class="products-grid stagger-children">
 
         <!-- Product 1 -->
-        <div class="product-card" id="product-1">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge sold-out">Sold out</span>
+            <button class="product-wish" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="product-quick-shop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View
+            </div>
             <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Away Shirt 25/26">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Barcelona away shirt 25/26 (Kobe Edition)</div>
             <div class="product-rating">
               <div class="product-stars">
                 <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
@@ -99,21 +174,27 @@
               </div>
               <span class="product-reviews">(12)</span>
             </div>
+            <h3 class="product-name">Barcelona away shirt 25/26 (Kobe Edition)</h3>
             <div class="product-pricing">
               <span class="product-price">Rs.2,499.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
         <!-- Product 2 -->
-        <div class="product-card" id="product-2">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge sale">Sale</span>
+            <button class="product-wish" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="product-quick-shop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View
+            </div>
             <img src="images/image (35).jpg" alt="Real Madrid Away Shirt">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (blue)</div>
             <div class="product-rating">
               <div class="product-stars">
                 <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
@@ -124,21 +205,27 @@
               </div>
               <span class="product-reviews">(8)</span>
             </div>
+            <h3 class="product-name">Real Madrid away shirt 24/25 (blue)</h3>
             <div class="product-pricing">
               <span class="product-price-old">Rs.2,699.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
+              <span class="product-price" style="color:var(--clr-sale)">Rs.2,299.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
         <!-- Product 3 -->
-        <div class="product-card" id="product-3">
+        <div class="product-card fade-in">
           <div class="product-card-img">
+            <button class="product-wish" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="product-quick-shop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View
+            </div>
             <img src="images/746927377_18094702874095746_8217654202578146858_n.jpg" alt="Portugal Away Shirt">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Portugal away shirt 25/26 (long sleeve)</div>
             <div class="product-rating">
               <div class="product-stars">
                 <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
@@ -149,21 +236,27 @@
               </div>
               <span class="product-reviews">(15)</span>
             </div>
+            <h3 class="product-name">Portugal away shirt 25/26 (long sleeve)</h3>
             <div class="product-pricing">
               <span class="product-price">From Rs.1,700.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
         <!-- Product 4 -->
-        <div class="product-card" id="product-4">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge sale">Sale</span>
+            <button class="product-wish" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="product-quick-shop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View
+            </div>
             <img src="images/image (36).jpg" alt="Real Madrid Dragon Edition">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Real Madrid dragon edition (pink)</div>
             <div class="product-rating">
               <div class="product-stars">
                 <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
@@ -174,839 +267,316 @@
               </div>
               <span class="product-reviews">(5)</span>
             </div>
+            <h3 class="product-name">Real Madrid dragon edition (pink)</h3>
             <div class="product-pricing">
               <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
+              <span class="product-price" style="color:var(--clr-sale)">Rs.2,299.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
-        <!-- Product 5 -->
-        <div class="product-card" id="product-5">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/image (34).jpg" alt="Real Madrid UCL Away">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid UCL away shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(18)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,449.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 6 -->
-        <div class="product-card" id="product-6">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (37).jpg" alt="Real Madrid Home Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid home shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(22)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,099.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 7 -->
-        <div class="product-card" id="product-7">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/image (35).jpg" alt="Real Madrid Away Half Sleeve">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (half sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(31)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,399.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 8 -->
-        <div class="product-card" id="product-8">
-          <div class="product-card-img">
-            <span class="product-badge new">New</span>
-            <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Third Kit">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Barcelona third kit 25/26 (gold edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(9)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,799.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-      </div>
-      <div class="view-all-wrapper fade-in">
-        <a href="#" class="view-all-btn">View all items</a>
       </div>
     </div>
   </section>
 
-<!-- Football Jerseys -->
-  <section class="section" id="football-jerseys">
+  <!-- WhatsApp CTA Strip -->
+  <section class="whatsapp-strip fade-in">
     <div class="container">
-      <div class="section-header centered-header fade-in">
-        <h2 class="section-title">Football Jerseys</h2>
-      </div>
-      <div class="products-carousel fade-in">
-
-        <!-- Product 1 -->
-        <div class="product-card" id="product-1">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Away Shirt 25/26">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Barcelona away shirt 25/26 (Kobe Edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(12)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,499.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" id="product-2">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (35).jpg" alt="Real Madrid Away Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (blue)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(8)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,699.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" id="product-3">
-          <div class="product-card-img">
-            <img src="images/746927377_18094702874095746_8217654202578146858_n.jpg" alt="Portugal Away Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Portugal away shirt 25/26 (long sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(15)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">From Rs.1,700.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" id="product-4">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (36).jpg" alt="Real Madrid Dragon Edition">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid dragon edition (pink)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(5)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 5 -->
-        <div class="product-card" id="product-5">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/image (34).jpg" alt="Real Madrid UCL Away">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid UCL away shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(18)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,449.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 6 -->
-        <div class="product-card" id="product-6">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (37).jpg" alt="Real Madrid Home Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid home shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(22)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,099.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 7 -->
-        <div class="product-card" id="product-7">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/image (35).jpg" alt="Real Madrid Away Half Sleeve">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (half sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(31)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,399.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 8 -->
-        <div class="product-card" id="product-8">
-          <div class="product-card-img">
-            <span class="product-badge new">New</span>
-            <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Third Kit">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Barcelona third kit 25/26 (gold edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(9)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,799.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-      </div>
-      <div class="view-all-wrapper fade-in">
-        <a href="#" class="view-all-btn">View all items</a>
-      </div>
+      <span class="whatsapp-strip-eyebrow">Personalized Support</span>
+      <h2 class="whatsapp-strip-title">Order directly via <strong>WhatsApp</strong></h2>
+      <p class="whatsapp-strip-sub">Fast, easy, and reliable. Chat with our team to place your order or ask about sizing.</p>
+      <a href="https://wa.me/923001234567" class="whatsapp-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </a>
     </div>
   </section>
 
-<!-- Kids Collection -->
-  <section class="section" id="kids-collection">
+  <!-- Best Sellers Carousel -->
+  <section class="section section-alt" id="bestsellers">
     <div class="container">
-      <div class="section-header centered-header fade-in">
-        <h2 class="section-title">Kids Collection</h2>
+      <div class="section-header fade-in">
+        <div class="section-header-left">
+          <span class="section-eyebrow">Most Wanted</span>
+          <h2 class="section-title">Best <strong>Sellers</strong></h2>
+        </div>
       </div>
-      <div class="products-carousel fade-in">
-
-        <!-- Product 1 -->
-        <div class="product-card" id="product-1">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Away Shirt 25/26">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Barcelona away shirt 25/26 (Kobe Edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(12)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,499.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" id="product-2">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (35).jpg" alt="Real Madrid Away Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (blue)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(8)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,699.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" id="product-3">
-          <div class="product-card-img">
-            <img src="images/746927377_18094702874095746_8217654202578146858_n.jpg" alt="Portugal Away Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Portugal away shirt 25/26 (long sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(15)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">From Rs.1,700.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" id="product-4">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (36).jpg" alt="Real Madrid Dragon Edition">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid dragon edition (pink)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(5)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
+      
+      <div class="products-carousel stagger-children">
 
         <!-- Product 5 -->
-        <div class="product-card" id="product-5">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge sold-out">Sold out</span>
+            <button class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+            <div class="product-quick-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View</div>
             <img src="images/image (34).jpg" alt="Real Madrid UCL Away">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Real Madrid UCL away shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(18)</span>
-            </div>
+            <h3 class="product-name">Real Madrid UCL away shirt 24/25</h3>
             <div class="product-pricing">
               <span class="product-price">Rs.2,449.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
         <!-- Product 6 -->
-        <div class="product-card" id="product-6">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge sale">Sale</span>
+            <button class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+            <div class="product-quick-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View</div>
             <img src="images/image (37).jpg" alt="Real Madrid Home Shirt">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Real Madrid home shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(22)</span>
-            </div>
+            <h3 class="product-name">Real Madrid home shirt 24/25</h3>
             <div class="product-pricing">
               <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,099.00 PKR</span>
+              <span class="product-price" style="color:var(--clr-sale)">Rs.2,099.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
         <!-- Product 7 -->
-        <div class="product-card" id="product-7">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge sold-out">Sold out</span>
+            <button class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+            <div class="product-quick-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View</div>
             <img src="images/image (35).jpg" alt="Real Madrid Away Half Sleeve">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (half sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(31)</span>
-            </div>
+            <h3 class="product-name">Real Madrid away shirt 24/25 (half sleeve)</h3>
             <div class="product-pricing">
               <span class="product-price">Rs.2,399.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
         <!-- Product 8 -->
-        <div class="product-card" id="product-8">
+        <div class="product-card fade-in">
           <div class="product-card-img">
             <span class="product-badge new">New</span>
+            <button class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+            <div class="product-quick-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View</div>
             <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Third Kit">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Barcelona third kit 25/26 (gold edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(9)</span>
-            </div>
+            <h3 class="product-name">Barcelona third kit 25/26 (gold edition)</h3>
             <div class="product-pricing">
               <span class="product-price">Rs.2,799.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
-
-      </div>
-      <div class="view-all-wrapper fade-in">
-        <a href="#" class="view-all-btn">View all items</a>
-      </div>
-    </div>
-  </section>
-
-<!-- Trendy Items -->
-  <section class="section" id="trendy-items">
-    <div class="container">
-      <div class="section-header centered-header fade-in">
-        <h2 class="section-title">Trendy Items</h2>
-      </div>
-      <div class="products-carousel fade-in">
-
-        <!-- Product 1 -->
-        <div class="product-card" id="product-1">
+        
+        <!-- Duplicated for carousel effect -->
+        <div class="product-card fade-in">
           <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Away Shirt 25/26">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Barcelona away shirt 25/26 (Kobe Edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(12)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,499.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" id="product-2">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (35).jpg" alt="Real Madrid Away Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (blue)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(8)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,699.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" id="product-3">
-          <div class="product-card-img">
+            <button class="product-wish"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+            <div class="product-quick-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Quick View</div>
             <img src="images/746927377_18094702874095746_8217654202578146858_n.jpg" alt="Portugal Away Shirt">
           </div>
           <div class="product-card-body">
-            <div class="product-name">Portugal away shirt 25/26 (long sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(15)</span>
-            </div>
+            <h3 class="product-name">Portugal away shirt 25/26 (long sleeve)</h3>
             <div class="product-pricing">
-              <span class="product-price">From Rs.1,700.00 PKR</span>
+              <span class="product-price">Rs.1,700.00 PKR</span>
             </div>
-            <button class="product-choose-btn">Choose options</button>
+            <a href="product.html" class="product-choose-btn">Choose options</a>
           </div>
         </div>
 
-        <!-- Product 4 -->
-        <div class="product-card" id="product-4">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (36).jpg" alt="Real Madrid Dragon Edition">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid dragon edition (pink)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(5)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,299.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 5 -->
-        <div class="product-card" id="product-5">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/image (34).jpg" alt="Real Madrid UCL Away">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid UCL away shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(18)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,449.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 6 -->
-        <div class="product-card" id="product-6">
-          <div class="product-card-img">
-            <span class="product-badge sale">Sale</span>
-            <img src="images/image (37).jpg" alt="Real Madrid Home Shirt">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid home shirt 24/25</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(22)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price-old">Rs.2,500.00 PKR</span>
-              <span class="product-price">Rs.2,099.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 7 -->
-        <div class="product-card" id="product-7">
-          <div class="product-card-img">
-            <span class="product-badge sold-out">Sold out</span>
-            <img src="images/image (35).jpg" alt="Real Madrid Away Half Sleeve">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Real Madrid away shirt 24/25 (half sleeve)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(31)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,399.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-        <!-- Product 8 -->
-        <div class="product-card" id="product-8">
-          <div class="product-card-img">
-            <span class="product-badge new">New</span>
-            <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Third Kit">
-          </div>
-          <div class="product-card-body">
-            <div class="product-name">Barcelona third kit 25/26 (gold edition)</div>
-            <div class="product-rating">
-              <div class="product-stars">
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-                <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
-              </div>
-              <span class="product-reviews">(9)</span>
-            </div>
-            <div class="product-pricing">
-              <span class="product-price">Rs.2,799.00 PKR</span>
-            </div>
-            <button class="product-choose-btn">Choose options</button>
-          </div>
-        </div>
-
-      </div>
-      <div class="view-all-wrapper fade-in">
-        <a href="#" class="view-all-btn">View all items</a>
       </div>
     </div>
   </section>
 
-  <!-- Collection Banner -->
+  <!-- Collection Banner (Split Layout) -->
   <section class="collection-banner">
-    <div class="collection-banner-bg">
-      <img src="images/collection-banner.jpg" alt="Retro collection">
+    <div class="collection-banner-media fade-in-left">
+      <img src="images/collection-banner.jpg" alt="Retro Collection">
     </div>
-    <div class="collection-banner-overlay"></div>
-    <div class="collection-banner-content">
-      <h2 class="collection-banner-title">New Season Collection</h2>
-      <p class="collection-banner-text">Shop the latest 2025/26 club and national team kits — freshly stocked and ready to ship.</p>
-      <a href="#products" class="hero-btn">Shop now</a>
+    <div class="collection-banner-text fade-in-right">
+      <span class="collection-eyebrow">The Heritage Line</span>
+      <h2 class="collection-title">Classic <strong>Retro Kits</strong></h2>
+      <p class="collection-desc">Relive the glory days of football with our exclusive collection of iconic vintage jerseys. Exact replicas with modern fabric technology for unmatched comfort.</p>
+      
+      <div class="collection-stats">
+        <div class="stat-item">
+          <span class="stat-number">90s</span>
+          <span class="stat-label">Era Focus</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Authentic Details</span>
+        </div>
+      </div>
+      
+      <a href="shop.html" class="btn-outline-light">
+        Shop Retro
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-header-left">
+          <span class="section-eyebrow">Customer Feedback</span>
+          <h2 class="section-title">What They <strong>Say</strong></h2>
+        </div>
+      </div>
+      
+      <div class="testimonials-grid stagger-children">
+        
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+          </div>
+          <p class="testimonial-text">"Absolutely blown away by the quality. The embroidery on the Real Madrid kit is spot on. Delivered in just 3 days to Lahore. Will definitely order again."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">H</div>
+            <div>
+              <div class="testimonial-name">Hassan R.</div>
+              <div class="testimonial-meta">Verified Buyer · Lahore</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+          </div>
+          <p class="testimonial-text">"The customer service on WhatsApp is unmatched. They helped me pick the right size for my brother's gift. The fabric feels very premium and breathable."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <div class="testimonial-name">Aliya K.</div>
+              <div class="testimonial-meta">Verified Buyer · Karachi</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+          </div>
+          <p class="testimonial-text">"Got the Barcelona Kobe edition. Details are perfect. Best jersey store in Pakistan right now. The packaging was also very clean and professional."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">U</div>
+            <div>
+              <div class="testimonial-name">Usman M.</div>
+              <div class="testimonial-meta">Verified Buyer · Islamabad</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- Features Bar -->
   <section class="features-bar">
     <div class="container">
-      <div class="features-grid fade-in">
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <div class="features-grid stagger-children">
+        <div class="feature-item fade-in">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
             </svg>
           </div>
-          <div class="feature-title">Fast Delivery</div>
-          <div class="feature-text">2-4 business days nationwide</div>
+          <div>
+            <h4 class="feature-title">Express Delivery</h4>
+            <p class="feature-text">2-4 business days nationwide</p>
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <div class="feature-item fade-in">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
             </svg>
           </div>
-          <div class="feature-title">Premium Quality</div>
-          <div class="feature-text">Authentic match-day fabric</div>
+          <div>
+            <h4 class="feature-title">Premium Quality</h4>
+            <p class="feature-text">Authentic match-day fabric</p>
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <div class="feature-item fade-in">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182" />
             </svg>
           </div>
-          <div class="feature-title">Easy Returns</div>
-          <div class="feature-text">7-day return & exchange</div>
+          <div>
+            <h4 class="feature-title">Easy Returns</h4>
+            <p class="feature-text">7-day return & exchange policy</p>
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <div class="feature-item fade-in">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
             </svg>
           </div>
-          <div class="feature-title">Cash on Delivery</div>
-          <div class="feature-text">COD available nationwide</div>
+          <div>
+            <h4 class="feature-title">Cash on Delivery</h4>
+            <p class="feature-text">Secure COD across Pakistan</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Newsletter -->
-  <section class="newsletter" id="contact">
+  <section class="newsletter">
     <div class="container">
-      <h2 class="newsletter-title">Subscribe to our emails</h2>
-      <p class="newsletter-text">Be the first to know about new collections and exclusive offers.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" placeholder="Email" required id="newsletterEmail">
-        <button type="submit">Subscribe</button>
-      </form>
+      <div class="newsletter-inner">
+        <div class="newsletter-left fade-in">
+          <span class="section-eyebrow">Join the Club</span>
+          <h2 class="section-title">Unlock <strong>Exclusive Access</strong></h2>
+          <div class="newsletter-perks">
+            <div class="newsletter-perk">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Early access to limited drops
+            </div>
+            <div class="newsletter-perk">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              10% off your first order
+            </div>
+            <div class="newsletter-perk">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Private sale invitations
+            </div>
+          </div>
+        </div>
+        
+        <div class="newsletter-right fade-in">
+          <div class="newsletter-form-wrap">
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email address" required id="newsletterEmail">
+              <button type="submit">Subscribe Now</button>
+            </form>
+            <p class="newsletter-disclaimer">By subscribing, you agree to our Terms of Service and Privacy Policy. Unsubscribe at any time.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1016,81 +586,87 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="nav-logo">
-            <img src="images/image (38).jpg" alt="DO Store">
+            <span class="nav-logo-text">DO Store</span>
           </a>
-          <p class="footer-brand-desc">Pakistan's trusted destination for premium football jerseys. Authentic club and national team kits delivered to your doorstep.</p>
+          <p class="footer-brand-desc">Pakistan's most trusted destination for premium football jerseys. Authentic club and national team kits delivered straight to your doorstep.</p>
           <div class="footer-socials">
             <a href="#" class="footer-social-link" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
             <a href="#" class="footer-social-link" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
             </a>
             <a href="#" class="footer-social-link" aria-label="TikTok">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link" aria-label="WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
               </svg>
             </a>
           </div>
         </div>
+        
         <div class="footer-col">
-          <div class="footer-col-title">Shop</div>
+          <h4 class="footer-col-title">Shop Collection</h4>
           <ul>
-            <li><a href="#">Football Shirts</a></li>
-            <li><a href="#">Shorts</a></li>
-            <li><a href="#">Shop for Kids</a></li>
-            <li><a href="#">Footballs</a></li>
-            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Club Jerseys</a></li>
+            <li><a href="#">National Teams</a></li>
+            <li><a href="#">Kids Edition</a></li>
+            <li><a href="#">Retro Kits</a></li>
+            <li><a href="#">Shorts & Socks</a></li>
           </ul>
         </div>
+        
         <div class="footer-col">
-          <div class="footer-col-title">Help</div>
+          <h4 class="footer-col-title">Customer Care</h4>
           <ul>
-            <li><a href="#">Size Chart</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Return / Exchange Policy</a></li>
             <li><a href="#">Track Order</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size Guide</a></li>
             <li><a href="#">FAQs</a></li>
           </ul>
         </div>
+        
         <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <ul>
-            <li><a href="#">WhatsApp</a></li>
-            <li><a href="#">Instagram DM</a></li>
-            <li><a href="#">Email Us</a></li>
-          </ul>
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+92 300 1234567<br>Mon-Sat 10am to 6pm</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>support@dostore.pk<br>We reply within 24hrs</span>
+          </div>
         </div>
       </div>
+      
       <div class="footer-bottom">
         <p>&copy; 2025 DO Store. All rights reserved.</p>
         <div class="footer-payments">
           <span>Cash on Delivery</span>
           <span>JazzCash</span>
           <span>EasyPaisa</span>
-          <span>Bank Transfer</span>
+          <span>Visa / Mastercard</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <!-- Floating Elements -->
+  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
