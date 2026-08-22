@@ -54,150 +54,1184 @@ export const GROQ_QUERIES = {
   }`,
 };
 
-// ── Fallback Demo Products (Rs. 1,400) ──
+// ── Fallback Demo Products (Live Sanity Dataset: 16 Products @ Rs. 1,400) ──
 export const FALLBACK_PRODUCTS = [
   {
-    _id: 'prod-1',
-    title: 'BELLINGHAM JERSEY',
-    slug: { current: 'bellinghamm-jersey' },
-    teamName: 'Real Madrid',
-    price: 1400,
-    oldPrice: 1600,
-    badge: 'sold-out',
-    rating: 5,
-    reviewsCount: 12,
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: {
-      asset: { _ref: 'image-barcelona-away-jpg' },
-      alt: 'BELLINGHAM JERSEY',
-      url: 'images/754070242_18095889170095746_1850153576216694919_n.jpg',
+    "_id": "76885fbc-73a2-4f54-bdbf-377f92ffd636",
+    "title": "MESSI BARCELONA",
+    "slug": {
+      "current": "messi-barcelona"
     },
-    gallery: [
-      { asset: { _ref: 'g-1' }, url: 'images/754070242_18095889170095746_1850153576216694919_n.jpg', alt: 'Front View' },
-      { asset: { _ref: 'g-2' }, url: 'images/image (34).jpg', alt: 'Close-up Detail' },
-      { asset: { _ref: 'g-3' }, url: 'images/image (35).jpg', alt: 'Fabric Texture' },
-      { asset: { _ref: 'g-4' }, url: 'images/image (36).jpg', alt: 'Back View' },
+    "teamName": "FC Barcelona",
+    "price": 1400,
+    "oldPrice": 1600,
+    "badge": "new",
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
     ],
-    description: [
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-000fc2a8563006aaed2bb6f885d8246cfb861a5d-1600x1506-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
       {
-        _type: 'block',
-        style: 'normal',
-        children: [
+        "_key": "99d126f010db",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-cbb369d8c0c567a838c1462529394042b9a2a65c-1600x1418-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
           {
-            _type: 'span',
-            text: 'Crafted with premium, breathable Dri-FIT technology that wicks sweat away from the skin for quicker evaporation, helping you stay dry and comfortable on and off the pitch.',
-          },
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH MESSI JERSEY."
+          }
         ],
+        "markDefs": [],
+        "style": "normal"
       },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
     ],
-    details: [
-      '100% Recycled Polyester fabric',
-      'Dri-FIT technology for moisture wicking',
-      'Embroidered club crest and swoosh',
-      'Standard fit for a relaxed, easy feel',
-      'Machine washable',
-    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
   },
   {
-    _id: 'prod-2',
-    title: 'MESSI INTERMIAMI JERSEY',
-    slug: { current: 'messi-intermiami-jersey' },
-    teamName: 'Other',
-    price: 1400,
-    oldPrice: 1600,
-    badge: 'sale',
-    rating: 5,
-    reviewsCount: 8,
-    sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: {
-      asset: { _ref: 'image-rm-away-jpg' },
-      alt: 'MESSI INTERMIAMI JERSEY',
-      url: 'images/image (35).jpg',
+    "_id": "f19b76ff-14cb-4648-b2da-2ff0858647dd",
+    "title": "PEDRI SPAIN JERSEY",
+    "slug": {
+      "current": "pedri-spain-jersey"
     },
-    gallery: [
-      { asset: { _ref: 'g-21' }, url: 'images/image (35).jpg', alt: 'Front' },
-      { asset: { _ref: 'g-22' }, url: 'images/image (34).jpg', alt: 'Angle' },
-      { asset: { _ref: 'g-23' }, url: 'images/image (37).jpg', alt: 'Crest' },
+    "teamName": "Other",
+    "price": 1400,
+    "badge": "sale",
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
     ],
-    description: [
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-f6494877db32c769cefd75c5dc3b8165b1e6ce33-1326x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
       {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'Features authentic heat-applied crests and metallic accents for unmatched on-pitch style.',
-          },
-        ],
-      },
+        "_key": "fa7e5ca9a76e",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-b15d2034a9a840ab6e33f30acd711c3827b4d8fd-1282x1600-jpg",
+          "_type": "reference"
+        }
+      }
     ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH PEDRI JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
   },
   {
-    _id: 'prod-3',
-    title: 'CRISTIANO RONALDO JERSEY',
-    slug: { current: 'cristiano-ronaldo-jersey' },
-    teamName: 'Portugal',
-    price: 1400,
-    oldPrice: 1600,
-    badge: 'new',
-    rating: 5,
-    reviewsCount: 15,
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: {
-      asset: { _ref: 'image-portugal-jpg' },
-      alt: 'CRISTIANO RONALDO JERSEY',
-      url: 'images/746927377_18094702874095746_8217654202578146858_n.jpg',
+    "_id": "09304761-ed2c-4280-ab61-47fd9ac79b72",
+    "title": "MESSI INTERMIAMI JERSEY",
+    "slug": {
+      "current": "messi-intermiami-jersey"
     },
-    gallery: [
-      { asset: { _ref: 'g-31' }, url: 'images/746927377_18094702874095746_8217654202578146858_n.jpg', alt: 'Full Jersey' },
-      { asset: { _ref: 'g-32' }, url: 'images/image (38).jpg', alt: 'Details' },
+    "teamName": "Other",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
     ],
-    description: [
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-97467fa7f1b213ed52eddb18b8704de32981e3a6-1212x1280-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
       {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'Long sleeve edition tailored for optimum performance, comfort, and heritage elegance.',
-          },
-        ],
-      },
+        "_key": "8f0a8af21c74",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-af69ea9c2d286c950d60b7190e87affda247402a-1484x1600-jpg",
+          "_type": "reference"
+        }
+      }
     ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH MESSI JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
   },
   {
-    _id: 'prod-4',
-    title: 'MESSI BARCELONA',
-    slug: { current: 'messi-barcelona' },
-    teamName: 'FC Barcelona',
-    price: 1400,
-    oldPrice: 1600,
-    badge: 'sale',
-    rating: 5,
-    reviewsCount: 18,
-    sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: {
-      asset: { _ref: 'image-ucl-jpg' },
-      alt: 'MESSI BARCELONA',
-      url: 'images/image (34).jpg',
+    "_id": "426f9a52-9698-4fd4-96ed-d9bf33a4333c",
+    "title": "CRISTIANO RONLADO JERSEY",
+    "slug": {
+      "current": "cristiano-ronlado-jersey"
     },
-    gallery: [
-      { asset: { _ref: 'g-51' }, url: 'images/image (34).jpg', alt: 'Front' },
-      { asset: { _ref: 'g-52' }, url: 'images/image (35).jpg', alt: 'Back' },
+    "teamName": "Real Madrid",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
     ],
-    description: [
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-493894be372133892366146b4358770073727d4e-1462x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
       {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'Special edition with premium woven fabric and precision temperature control.',
-          },
-        ],
-      },
+        "_key": "bc560bb0e11d",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-05a0758a4476a0e5dcb382f52be91dddc253aab6-1444x1600-jpg",
+          "_type": "reference"
+        }
+      }
     ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONALDO JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
   },
+  {
+    "_id": "28610302-7360-47d8-b5ee-31eafb2a1acf",
+    "title": "CRISTIANO RONALDO JERSEY",
+    "slug": {
+      "current": "cristiano-ronaldo-jersey"
+    },
+    "teamName": "Real Madrid",
+    "price": 1400,
+    "oldPrice": 1600,
+    "badge": "sold-out",
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-3cf3df02cd796991c8094f6acab795f5a9ad39a0-1470x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "2202b6d5bc02",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-bb43f3aff56a6b7f5ff483492b3f40f03458ff94-1380x1600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONALDOJERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "76ef7f45-906d-410f-9942-4fb585194830",
+    "title": "BELLINGHAM JERSEY",
+    "slug": {
+      "current": "bellingham-jersey"
+    },
+    "teamName": "England",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-e6b9ce4c03eb911debb279fa3a312465655e37d6-1044x1280-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "3806926e8a25",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-de37a325d8535fa73f178a0b5782fb401d119e46-1110x1280-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH BELLINGHAM JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "76c2d1a1-878f-417e-9972-a0cbbefebc55",
+    "title": "CUSTOM BARCA JERSEY",
+    "slug": {
+      "current": "custom-barca-jersey"
+    },
+    "teamName": "FC Barcelona",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-7b72515ffe1f4b6313c3dfab8af90f8d641ba67b-1280x1064-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "5841bf645c9e",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-898220dd4388e73a4bcfcd638d5e26005246f1bc-1280x1102-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH CUSTOM BARCA JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "7dbed6b5-dd21-459f-b3ab-626a198cc03f",
+    "title": "MESSI JERSEY",
+    "slug": {
+      "current": "messi-jersey"
+    },
+    "teamName": "Argentina",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-8740f6f3d5443c7927ecb87d8199cc3ebb6e065d-1280x1240-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "3f788a523efc",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-57a7c33ad38f51a5d47892a25a3e4d5e204f4112-1190x1280-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH MESSI JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "930ea7e4-43d5-469c-a84c-2bc88aa1e4c9",
+    "title": "MANCHESTER CITY JERSEY",
+    "slug": {
+      "current": "manchester-city-jersey"
+    },
+    "teamName": "Manchester City",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-48dde90723b511c3b00e1a075c3ead9ef2b87c4a-1258x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "348b79728db3",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-8d8a3fcdb3f6dfe192a94f36a647c3466ea64acf-1200x1600-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "0f3363b5a212",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-f4b630318db7e346050f189d717c8e508b6d0ed8-1232x1600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH MANCHESTERJERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "a365e721-321a-4ac0-9bb7-02fb4d8c97d9",
+    "title": "LAMINE YAMAL JERSEY",
+    "slug": {
+      "current": "lamine-yamal-jersey"
+    },
+    "teamName": "FC Barcelona",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-87c46c11701eab4b715890088589126734f0dad6-1125x1270-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "997d15f19ca6",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-ef7bca6971884f79aa5d549e860958abaa1e2849-1434x1600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH LAMINE YAMAL JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "df5fb94e-1288-4b86-8efb-a301017ee340",
+    "title": "CRISTIANO RONALDO JERSEY",
+    "slug": {
+      "current": "cristiano-ronaldoo-jersey"
+    },
+    "teamName": "Real Madrid",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-93ad45455010a36b4007bc07fc9a16212a7821ae-1464x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "4dac2336341e",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-a1c9a29e03331782b720d2d9279bfe4945587703-1448x1600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONALDO JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "087448e7-3b6d-420d-8778-c0df28adade4",
+    "title": "BELLINGHAM JERSEY",
+    "slug": {
+      "current": "bellinghamm-jersey"
+    },
+    "teamName": "Real Madrid",
+    "price": 1400,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-f17f5745b0eb2e45c46856b5b80330d8d478fe98-1390x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "d2f2dadadb5a",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-da2c2c6a9f755245f356f8bf81a6587745f8d006-1294x1600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH BELLINGHAM JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "dd334e22-26b4-4382-a224-cc8a7e8c0825",
+    "title": "CRISTIANO RONALDO JERSEY",
+    "slug": {
+      "current": "cristiano-ronaldooo-jersey"
+    },
+    "teamName": "Portugal",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-a56863cc5b1b834faa5155e6ed050f0ae97561e7-1280x1266-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "6b421e012750",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-ab8c7ffdc244678d565255829ba846d58f03c8a1-1280x1212-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONALDO JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "31b7030d-e4d4-4635-a8cc-bb9a6d04aa4d",
+    "title": "CRISTIANO RONALDO INT",
+    "slug": {
+      "current": "cristiano-ronaldo-int"
+    },
+    "teamName": "Portugal",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-b91ab38078a4b5e77afa8b9f761274e5144aad7b-1280x1204-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "c25110b22519",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-4221af25b7d6e5b947e0103a83de131e8fa90024-1234x1280-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONADLO JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "b7afe3a6-b1f6-4334-b002-15bda04c0f77",
+    "title": "CRISTIANO RONALDO CUSTOM JERSEY",
+    "slug": {
+      "current": "cristiano-ronaldo-custom-jersey"
+    },
+    "teamName": "Real Madrid",
+    "price": 1400,
+    "oldPrice": 1600,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-1f6b7cb7e88f594ae52e9589e8e69c176890b2bf-1390x1600-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "0dbf057699fe",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-3d37c8952eba32204858bfc568e261051a76a06a-1424x1600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONALDO JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  },
+  {
+    "_id": "51c0283d-b8db-44f6-8764-d2357cd3bacb",
+    "title": "CRISTIANO RONALDO JERSEY",
+    "slug": {
+      "current": "cristiano-ronaldo-jerseyy"
+    },
+    "teamName": "Real Madrid",
+    "price": 1400,
+    "rating": 5,
+    "reviewsCount": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-c2652d0ec58a2ad7b78877c3c94ac16ca8498634-1254x1280-jpg",
+        "_type": "reference"
+      }
+    },
+    "gallery": [
+      {
+        "_key": "1908109bb933",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-5605171923ba5899588ff7bc8ce187f213369481-1130x1280-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "description": [
+      {
+        "_key": "3ecdf29cb9ed",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a37cc56d5ef",
+            "_type": "span",
+            "marks": [],
+            "text": "ELEVATE YOUR MATCHES WITH RONALDO JERSEY."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "da076734994e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "49dc527cf8c5",
+            "_type": "span",
+            "marks": [],
+            "text": "Design for ultimate comfort and iconic flair."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "details": [
+      "100% Recycled Polyester match-grade fabric",
+      "Dri-FIT moisture-wicking technology",
+      "Embroidered crest and authentic detailing",
+      "Standard athletic fit",
+      "Machine washable"
+    ]
+  }
 ];
 
 // ── Sanity Image URL Builder (@sanity/image-url with CDN Optimizations) ──
