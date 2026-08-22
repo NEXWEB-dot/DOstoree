@@ -1,0 +1,21 @@
+{
+  "name": "dostore-sanity",
+  "version": "1.0.0",
+  "description": "DO Store - Sanity CMS Integration with dynamic Shop and PDP",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build"
+  },
+  "dependencies": {
+    "@portabletext/react": "^3.1.0",
+    "@portabletext/to-html": "^2.0.13",
+    "@sanity/client": "^6.21.3",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.53.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.53.0",
+    "styled-components": "^6.1.12"
+  }
+}

@@ -3,52 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DO Store — Pakistan's premium football jersey destination. Shop authentic club and national team shirts with fast delivery across Pakistan.">
-  <title>DO Store — Premium Football Jerseys</title>
+  <meta name="description" content="Premium football jersey — Shop at DO Store Pakistan. Authentic detailing, fast delivery, Cash on Delivery available.">
+  <meta name="keywords" content="football jerseys Pakistan, football shirts, buy football shirt Pakistan, DO Store">
+  <meta property="og:title" content="DO Store — Premium Football Jerseys Pakistan">
+  <meta property="og:description" content="Premium quality football jerseys. Fast delivery across Pakistan.">
+  <meta property="og:type" content="product">
+  <title>Product | DO Store — Premium Football Jerseys Pakistan</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/image (38).jpg" type="image/jpeg">
 </head>
 <body>
 
-  <!-- Announcement Bar -->
+  <!-- Announcement Bar (Animated Ticker) -->
   <div class="announcement-bar">
-    Free delivery on orders above Rs. 3,000 &nbsp;|&nbsp; Cash on Delivery available nationwide
+    <div class="announcement-track" id="announcementTrack">
+      <!-- Content populated by JS for infinite loop -->
+    </div>
   </div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
-      <a href="#" class="nav-logo">
-        <img src="images/image (38).jpg" alt="DO Store">
+      <a href="index.html" class="nav-logo">
+        <img src="images/image (38).jpg" alt="DO Store Logo">
+        <span class="nav-logo-text">DO Store</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#products">Catalog</a></li>
-        <li><a href="#products">Football Shirts</a></li>
-        <li><a href="#">Shorts</a></li>
-        <li><a href="#">Shop for Kids</a></li>
-        <li><a href="#">Casual / Winter Collection</a></li>
-        <li><a href="#">Footballs</a></li>
-        <li><a href="#">Size Chart</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#">Return / Exchange Policy</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="index.html#featured">Featured</a></li>
+        <li><a href="index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="nav-action-btn" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
         </button>
         <button class="nav-action-btn" aria-label="Account">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
           </svg>
         </button>
         <button class="nav-action-btn" aria-label="Cart">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
           </svg>
           <span class="cart-count">0</span>
         </button>
@@ -61,47 +63,236 @@
     </div>
   </nav>
 
-  <!-- Product Detail -->
-  <div class="container product-detail-container">
-    <div class="product-gallery">
-      <div class="product-main-img">
-        <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Away Shirt" id="mainProductImg">
-      </div>
-      <div class="product-thumbnails">
-        <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" class="active" onclick="document.getElementById('mainProductImg').src=this.src">
-        <img src="images/image (34).jpg" onclick="document.getElementById('mainProductImg').src=this.src">
-        <img src="images/image (35).jpg" onclick="document.getElementById('mainProductImg').src=this.src">
-        <img src="images/image (36).jpg" onclick="document.getElementById('mainProductImg').src=this.src">
-      </div>
-    </div>
-    <div class="product-info">
-      <h1 class="product-title">Barcelona away shirt 25/26 (Kobe Edition)</h1>
-      <div class="product-price-large">Rs.2,499.00 PKR</div>
-      <div class="product-description">
-        <p>Authentic Barcelona away shirt for the 25/26 season, special Kobe edition. Features premium breathable fabric and high-quality club crest.</p>
-      </div>
-      <div class="product-form">
-        <div class="form-group">
-          <label>Size</label>
-          <div class="size-selector">
-            <div class="size-btn">S</div>
-            <div class="size-btn active">M</div>
-            <div class="size-btn">L</div>
-            <div class="size-btn">XL</div>
+  <!-- Product Detail Section -->
+  <main class="container">
+
+    <!-- Page-level Loading Skeleton Overlay -->
+    <div class="pdp-loading-overlay" id="pdpLoadingOverlay">
+      <div class="pdp-skeleton-wrap">
+        <div class="pdp-skel-gallery">
+          <div class="skeleton-img" style="aspect-ratio:4/5; border-radius: 2px;"></div>
+          <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:12px; margin-top:12px;">
+            <div class="skeleton-img" style="aspect-ratio:1;"></div>
+            <div class="skeleton-img" style="aspect-ratio:1;"></div>
+            <div class="skeleton-img" style="aspect-ratio:1;"></div>
+            <div class="skeleton-img" style="aspect-ratio:1;"></div>
           </div>
         </div>
-        <button class="add-to-cart-large">Add to Cart</button>
+        <div class="pdp-skel-info">
+          <div class="skeleton-line short" style="height:12px; margin-bottom:16px;"></div>
+          <div class="skeleton-line full" style="height:32px; margin-bottom:10px;"></div>
+          <div class="skeleton-line mid" style="height:32px; margin-bottom:24px;"></div>
+          <div class="skeleton-line short" style="height:18px; margin-bottom:8px;"></div>
+          <div class="skeleton-line mid" style="height:18px; margin-bottom:32px;"></div>
+          <div class="skeleton-line full" style="height:100px; margin-bottom:24px;"></div>
+          <div class="skeleton-line full" style="height:52px; margin-bottom:12px;"></div>
+          <div class="skeleton-line full" style="height:52px; margin-bottom:12px;"></div>
+          <div class="skeleton-line full" style="height:52px;"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <section class="newsletter" id="contact">
+
+    <div class="breadcrumb fade-in">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="shop.html">Shop All</a>
+      <span>/</span>
+      <span id="breadcrumbCurrent">Loading…</span>
+    </div>
+
+    <div class="product-detail-container" id="productDetailContainer" style="opacity:0; transition: opacity 0.3s ease;">
+      
+      <!-- Left: Gallery -->
+      <div class="product-gallery fade-in-left">
+        <div class="product-main-img">
+          <span class="product-badge large new" id="productBadgeLarge" style="display:none;"></span>
+          <img src="" alt="Loading product image" id="mainProductImg" style="min-height:200px; background:var(--clr-bg-warm);">
+        </div>
+        <div class="product-thumbnails" id="productThumbnails"></div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info fade-in-right">
+        
+        <div class="product-info-header">
+          <div class="product-tags-wrap">
+            <span class="product-brand" id="productBrand"></span>
+            <span class="product-team-pill" id="productTeamPill" style="display:none;"></span>
+          </div>
+          <h1 class="product-title-large" id="productTitle">Loading…</h1>
+          <div class="product-rating">
+            <div class="product-stars">
+              <svg viewBox="0 0 20 20" style="fill: var(--clr-star);"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg viewBox="0 0 20 20" style="fill: var(--clr-star);"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg viewBox="0 0 20 20" style="fill: var(--clr-star);"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg viewBox="0 0 20 20" style="fill: var(--clr-star);"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg viewBox="0 0 20 20" style="fill: var(--clr-star);"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.28l-4.77 2.51.91-5.33L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <span class="product-reviews" id="productReviewsText">—</span>
+          </div>
+        </div>
+
+        <div class="product-price-wrap">
+          <span class="product-price-large" id="productPriceLarge">—</span>
+          <span class="product-price-old-large" id="productPriceOldLarge" style="display:none;"></span>
+          <span class="product-bundle-savings" id="productBundleSavings" style="display: none;"></span>
+        </div>
+
+        <!-- Portable Text Rich Description container -->
+        <div class="product-description" id="productDescription"></div>
+
+        <!-- Bundle Deal Tier Selection Widget -->
+        <div class="bundle-selector-wrap" id="bundleSelectorWrap">
+          <div class="bundle-selector-header">
+            <span class="bundle-selector-label">Choose Purchasing Option</span>
+            <span class="bundle-savings-badge">Save Extra with Bundles</span>
+          </div>
+          
+          <div class="bundle-tier-options">
+            
+            <!-- Option 1: Single Jersey -->
+            <div class="bundle-tier-card active" id="singleTierCard" tabindex="0">
+              <div class="bundle-tier-radio"></div>
+              <div class="bundle-tier-info">
+                <div class="bundle-tier-title">1x Single Jersey</div>
+                <div class="bundle-tier-sub">Standard individual price</div>
+              </div>
+              <div class="bundle-tier-pricing">
+                <span class="bundle-tier-price" id="singleTierPrice">Rs. 2,350</span>
+              </div>
+            </div>
+
+            <!-- Option 2: 4-Jersey Bundle Deal -->
+            <div class="bundle-tier-card" id="bundleTierCard" tabindex="0">
+              <div class="bundle-tier-badge">🔥 BEST VALUE — 4 FOR RS. 4,200</div>
+              <div class="bundle-tier-radio"></div>
+              <div class="bundle-tier-info">
+                <div class="bundle-tier-title">4x Jersey Bundle Deal</div>
+                <div class="bundle-tier-sub" id="bundleTierSub">Only Rs. 1,050 per kit — Save over Rs. 5,200</div>
+              </div>
+              <div class="bundle-tier-pricing">
+                <span class="bundle-tier-old-price" id="bundleTierOldPrice">Rs. 9,400</span>
+                <span class="bundle-tier-price highlight" id="bundleTierPrice">Rs. 4,200</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="product-form">
+          <div class="form-group">
+            <div class="form-group-flex">
+              <label>Select Size</label>
+              <span class="size-guide-link">Size Guide</span>
+            </div>
+            <div class="size-selector" id="sizeSelector">
+              <button class="size-btn">S</button>
+              <button class="size-btn active">M</button>
+              <button class="size-btn">L</button>
+              <button class="size-btn">XL</button>
+              <button class="size-btn">XXL</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Quantity</label>
+            <div class="qty-cart-wrap">
+              <div class="qty-selector">
+                <button class="qty-btn" id="qtyMinus">−</button>
+                <input type="number" class="qty-input" id="qtyInput" value="1" min="1" max="10">
+                <button class="qty-btn" id="qtyPlus">+</button>
+              </div>
+              <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+            </div>
+          </div>
+
+          <a href="checkout.html" class="checkout-now-btn" id="checkoutBtn">Buy Now — Checkout</a>
+
+          <button class="wa-buy-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+
+        <!-- Accordions -->
+        <div class="product-accordion-wrap">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Product Details
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <ul id="productDetailsList">
+                  <li>100% Recycled Polyester fabric</li>
+                  <li>Dri-FIT technology for moisture wicking</li>
+                  <li>Embroidered club crest and swoosh</li>
+                  <li>Standard fit for a relaxed, easy feel</li>
+                  <li>Machine washable</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Shipping &amp; Returns
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <p><strong>Standard Shipping:</strong> 2-4 business days nationwide.<br>
+                <strong>Cash on Delivery:</strong> Available across Pakistan.</p>
+                <p>We offer a hassle-free 7-day return and exchange policy if the product is defective or the size doesn't fit. The item must be unworn and in its original packaging with tags intact.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Authenticity Guarantee
+              <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <p>DO Store ensures that all our premium match shirts are of the highest quality A+ replica grade available in the market, featuring exact detailing, fabric weight, and stitching as the originals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
     <div class="container">
-      <h2 class="newsletter-title">Subscribe to our emails</h2>
-      <p class="newsletter-text">Be the first to know about new collections and exclusive offers.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" placeholder="Email" required id="newsletterEmail">
-        <button type="submit">Subscribe</button>
-      </form>
+      <div class="newsletter-inner">
+        <div class="newsletter-left fade-in">
+          <span class="section-eyebrow">Join the Club</span>
+          <h2 class="section-title">Unlock <strong>Exclusive Access</strong></h2>
+          <div class="newsletter-perks">
+            <div class="newsletter-perk">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Early access to limited drops
+            </div>
+            <div class="newsletter-perk">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              10% off your first order
+            </div>
+          </div>
+        </div>
+        <div class="newsletter-right fade-in">
+          <div class="newsletter-form-wrap">
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Enter your email address" required id="newsletterEmail">
+              <button type="submit">Subscribe Now</button>
+            </form>
+            <p class="newsletter-disclaimer">By subscribing, you agree to our Terms of Service and Privacy Policy. Unsubscribe at any time.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -110,83 +301,65 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="nav-logo">
-            <img src="images/image (38).jpg" alt="DO Store">
+          <a href="index.html" class="nav-logo">
+            <span class="nav-logo-text">DO Store</span>
           </a>
-          <p class="footer-brand-desc">Pakistan's trusted destination for premium football jerseys. Authentic club and national team kits delivered to your doorstep.</p>
+          <p class="footer-brand-desc">Pakistan's most trusted destination for premium football jerseys. Authentic club and national team kits delivered straight to your doorstep.</p>
           <div class="footer-socials">
             <a href="#" class="footer-social-link" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
             <a href="#" class="footer-social-link" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link" aria-label="TikTok">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-              </svg>
-            </a>
-            <a href="#" class="footer-social-link" aria-label="WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </a>
           </div>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">Shop</div>
+          <h4 class="footer-col-title">Shop Collection</h4>
           <ul>
-            <li><a href="#">Football Shirts</a></li>
-            <li><a href="#">Shorts</a></li>
-            <li><a href="#">Shop for Kids</a></li>
-            <li><a href="#">Footballs</a></li>
-            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Club Jerseys</a></li>
+            <li><a href="#">National Teams</a></li>
+            <li><a href="#">Kids Edition</a></li>
+            <li><a href="#">Retro Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">Help</div>
+          <h4 class="footer-col-title">Customer Care</h4>
           <ul>
-            <li><a href="#">Size Chart</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Return / Exchange Policy</a></li>
             <li><a href="#">Track Order</a></li>
-            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size Guide</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <ul>
-            <li><a href="#">WhatsApp</a></li>
-            <li><a href="#">Instagram DM</a></li>
-            <li><a href="#">Email Us</a></li>
-          </ul>
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+92 300 1234567<br>Mon-Sat 10am to 6pm</span>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 DO Store. All rights reserved.</p>
         <div class="footer-payments">
           <span>Cash on Delivery</span>
-          <span>JazzCash</span>
-          <span>EasyPaisa</span>
-          <span>Bank Transfer</span>
+          <span>Visa / Mastercard</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+  <!-- Floating Elements -->
+  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
   <script src="script.js"></script>
+  <script type="module" src="product-dynamic.js"></script>
 </body>
 </html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout — DO Store. Secure and fast checkout for premium football jerseys. Cash on delivery available across Pakistan.">
+  <title>Checkout | DO Store — Premium Football Jerseys</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="checkout.css">
+  <link rel="icon" href="images/image (38).jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-track" id="announcementTrack"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/image (38).jpg" alt="DO Store Logo">
+        <span class="nav-logo-text">DO Store</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#featured">Featured</a></li>
+        <li><a href="index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-action-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+        </button>
+        <button class="nav-action-btn" aria-label="Account">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+        </button>
+        <button class="nav-action-btn" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+          <span class="cart-count">1</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Main -->
+  <main class="checkout-main">
+    <div class="checkout-wrapper">
+
+      <!-- Left: Checkout Form -->
+      <div class="checkout-form-col">
+        
+        <!-- Step Progress -->
+        <div class="checkout-progress">
+          <div class="checkout-progress-step active" id="progress-1">
+            <div class="step-num">1</div>
+            <span>Information</span>
+          </div>
+          <div class="checkout-progress-line"></div>
+          <div class="checkout-progress-step" id="progress-2">
+            <div class="step-num">2</div>
+            <span>Delivery</span>
+          </div>
+          <div class="checkout-progress-line"></div>
+          <div class="checkout-progress-step" id="progress-3">
+            <div class="step-num">3</div>
+            <span>Payment</span>
+          </div>
+        </div>
+
+        <!-- STEP 1: Contact & Shipping -->
+        <div class="checkout-step active" id="step-1">
+          <h2 class="checkout-step-title">Contact Information</h2>
+          
+          <div class="checkout-field-group">
+            <div class="checkout-field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+            </div>
+            <div class="checkout-field checkout-field-check">
+              <input type="checkbox" id="newsletter-opt" name="newsletter-opt">
+              <label for="newsletter-opt">Email me about new arrivals and exclusive offers</label>
+            </div>
+          </div>
+
+          <h2 class="checkout-step-title" style="margin-top: 36px;">Shipping Address</h2>
+
+          <div class="checkout-field-group">
+            <div class="checkout-field">
+              <label for="country">Country / Region</label>
+              <div class="checkout-select-wrap">
+                <select id="country" name="country">
+                  <option selected>Pakistan</option>
+                  <option>UAE</option>
+                  <option>Saudi Arabia</option>
+                  <option>UK</option>
+                </select>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-field-group checkout-field-row">
+            <div class="checkout-field">
+              <label for="fname">First name</label>
+              <input type="text" id="fname" name="fname" placeholder="Muhammad" autocomplete="given-name">
+            </div>
+            <div class="checkout-field">
+              <label for="lname">Last name</label>
+              <input type="text" id="lname" name="lname" placeholder="Ali" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="checkout-field-group">
+            <div class="checkout-field">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="Street, House/Flat No." autocomplete="street-address">
+            </div>
+          </div>
+
+          <div class="checkout-field-group checkout-field-row">
+            <div class="checkout-field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="Karachi" autocomplete="address-level2">
+            </div>
+            <div class="checkout-field">
+              <label for="province">Province</label>
+              <div class="checkout-select-wrap">
+                <select id="province" name="province">
+                  <option>Sindh</option>
+                  <option>Punjab</option>
+                  <option>KPK</option>
+                  <option>Balochistan</option>
+                  <option>AJK</option>
+                  <option>Gilgit-Baltistan</option>
+                </select>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+            </div>
+            <div class="checkout-field">
+              <label for="postal">Postal code (optional)</label>
+              <input type="text" id="postal" name="postal" placeholder="75500" autocomplete="postal-code">
+            </div>
+          </div>
+
+          <div class="checkout-field-group">
+            <div class="checkout-field">
+              <label for="phone">Phone</label>
+              <div class="checkout-phone-wrap">
+                <span class="phone-prefix">+92</span>
+                <input type="tel" id="phone" name="phone" placeholder="300 1234567" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <a href="shop.html" class="checkout-back-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+              Return to shop
+            </a>
+            <button class="checkout-next-btn" id="step1-next" onclick="goToStep(2)">Continue to Delivery</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Delivery -->
+        <div class="checkout-step" id="step-2">
+          <div class="checkout-breadcrumb">
+            <span>DO Store</span> › <span>Information</span> › <strong>Delivery</strong>
+          </div>
+          <h2 class="checkout-step-title">Delivery Method</h2>
+
+          <div class="delivery-options">
+            <label class="delivery-option selected" id="delivery-standard">
+              <input type="radio" name="delivery" value="standard" checked>
+              <div class="delivery-option-info">
+                <div class="delivery-option-name">Standard Delivery</div>
+                <div class="delivery-option-desc">2-4 business days — All across Pakistan</div>
+              </div>
+              <span class="delivery-option-price">Free</span>
+              <div class="delivery-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+            </label>
+
+            <label class="delivery-option" id="delivery-express">
+              <input type="radio" name="delivery" value="express">
+              <div class="delivery-option-info">
+                <div class="delivery-option-name">Express Delivery</div>
+                <div class="delivery-option-desc">Next business day — Major cities only</div>
+              </div>
+              <span class="delivery-option-price">Rs.299</span>
+              <div class="delivery-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+            </label>
+
+            <label class="delivery-option" id="delivery-cod">
+              <input type="radio" name="delivery" value="cod">
+              <div class="delivery-option-info">
+                <div class="delivery-option-name">Cash on Delivery</div>
+                <div class="delivery-option-desc">Pay when you receive — nationwide</div>
+              </div>
+              <span class="delivery-option-price">Free</span>
+              <div class="delivery-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+            </label>
+          </div>
+
+          <div class="checkout-actions">
+            <button class="checkout-back-btn" onclick="goToStep(1)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+              Back
+            </button>
+            <button class="checkout-next-btn" onclick="goToStep(3)">Continue to Payment</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Payment -->
+        <div class="checkout-step" id="step-3">
+          <div class="checkout-breadcrumb">
+            <span>DO Store</span> › <span>Information</span> › <span>Delivery</span> › <strong>Payment</strong>
+          </div>
+          <h2 class="checkout-step-title">Payment</h2>
+          <p class="checkout-step-sub">All transactions are secured and encrypted.</p>
+
+          <div class="payment-methods">
+            <div class="payment-method-tabs">
+              <button class="payment-tab active" data-method="cod" onclick="selectPayment('cod', this)">Cash on Delivery</button>
+              <button class="payment-tab" data-method="jazzcash" onclick="selectPayment('jazzcash', this)">JazzCash</button>
+              <button class="payment-tab" data-method="easypaisa" onclick="selectPayment('easypaisa', this)">EasyPaisa</button>
+              <button class="payment-tab" data-method="card" onclick="selectPayment('card', this)">Card</button>
+            </div>
+
+            <div class="payment-panel active" id="panel-cod">
+              <div class="payment-info-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" /></svg>
+                <div>
+                  <strong>Cash on Delivery</strong>
+                  <p>Pay in cash when your order is delivered to your doorstep. Available nationwide across Pakistan.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-panel" id="panel-jazzcash">
+              <div class="checkout-field-group">
+                <div class="checkout-field">
+                  <label for="jc-number">JazzCash Mobile Number</label>
+                  <div class="checkout-phone-wrap">
+                    <span class="phone-prefix">+92</span>
+                    <input type="tel" id="jc-number" placeholder="300 1234567">
+                  </div>
+                </div>
+              </div>
+              <p class="payment-note">You will receive a payment request on your JazzCash app to authorize the transaction.</p>
+            </div>
+
+            <div class="payment-panel" id="panel-easypaisa">
+              <div class="checkout-field-group">
+                <div class="checkout-field">
+                  <label for="ep-number">EasyPaisa Mobile Number</label>
+                  <div class="checkout-phone-wrap">
+                    <span class="phone-prefix">+92</span>
+                    <input type="tel" id="ep-number" placeholder="333 1234567">
+                  </div>
+                </div>
+              </div>
+              <p class="payment-note">A payment request will be sent to your EasyPaisa app for authorization.</p>
+            </div>
+
+            <div class="payment-panel" id="panel-card">
+              <div class="checkout-field-group">
+                <div class="checkout-field">
+                  <label for="card-number">Card number</label>
+                  <div class="card-input-wrap">
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                    <div class="card-icons">
+                      <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#1A1F71"/><rect x="2" y="2" width="44" height="28" rx="3" fill="#1A1F71"/><circle cx="18" cy="16" r="8" fill="#EB001B" opacity="0.9"/><circle cx="30" cy="16" r="8" fill="#F79E1B" opacity="0.9"/><ellipse cx="24" cy="16" rx="4" ry="8" fill="#FF5F00" opacity="0.8"/></svg>
+                      <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#003087"/><path d="M19 21h-3l2-10h3l-2 10zm9-10l-1 6-1-6h-3l2 10h3l4-10h-4zm7 0c-1 0-2 .5-2 1l-1 9h3l.3-2h2.4l.3 2h3l-2-10h-4zm1 5l.7-4 .7 4h-1.4z" fill="white"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout-field-group checkout-field-row">
+                <div class="checkout-field">
+                  <label for="card-expiry">Expiry (MM/YY)</label>
+                  <input type="text" id="card-expiry" placeholder="12/27" maxlength="5">
+                </div>
+                <div class="checkout-field">
+                  <label for="card-cvv">Security code (CVV)</label>
+                  <input type="text" id="card-cvv" placeholder="123" maxlength="4">
+                </div>
+              </div>
+              <div class="checkout-field-group">
+                <div class="checkout-field">
+                  <label for="card-name">Name on card</label>
+                  <input type="text" id="card-name" placeholder="Muhammad Ali">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Review -->
+          <h2 class="checkout-step-title" style="margin-top: 36px;">Review & Confirm</h2>
+          <div class="order-review-box">
+            <div class="review-row">
+              <span class="review-label">Contact</span>
+              <span class="review-value" id="review-email">—</span>
+              <button class="review-edit" onclick="goToStep(1)">Edit</button>
+            </div>
+            <div class="review-row">
+              <span class="review-label">Ship to</span>
+              <span class="review-value" id="review-address">—</span>
+              <button class="review-edit" onclick="goToStep(1)">Edit</button>
+            </div>
+            <div class="review-row">
+              <span class="review-label">Delivery</span>
+              <span class="review-value" id="review-delivery">Standard Delivery — Free</span>
+              <button class="review-edit" onclick="goToStep(2)">Edit</button>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button class="checkout-back-btn" onclick="goToStep(2)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+              Back
+            </button>
+            <button class="checkout-place-btn" onclick="placeOrder()">Place Order — Rs.2,499</button>
+          </div>
+        </div>
+
+        <!-- ORDER SUCCESS -->
+        <div class="checkout-step checkout-success" id="step-success">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+          </div>
+          <h2 class="success-title">Order Placed!</h2>
+          <p class="success-sub">Thank you for your order. We'll send you a confirmation and shipping updates soon.</p>
+          <div class="success-order-num">
+            <span>Order Number</span>
+            <strong>#DO-2026-0817</strong>
+          </div>
+          <div class="success-actions">
+            <a href="shop.html" class="checkout-next-btn">Continue Shopping</a>
+            <a href="https://wa.me/923001234567" class="checkout-wa-btn" target="_blank">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Track via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Order Summary -->
+      <div class="checkout-summary-col">
+        <div class="checkout-summary">
+          <h3 class="summary-title">Order Summary</h3>
+          
+          <div class="summary-items">
+            <div class="summary-item">
+              <div class="summary-item-img-wrap">
+                <img src="images/754070242_18095889170095746_1850153576216694919_n.jpg" alt="Barcelona Away Shirt 25/26">
+                <span class="summary-item-qty">1</span>
+              </div>
+              <div class="summary-item-info">
+                <div class="summary-item-name">Barcelona Away Shirt 25/26 (Kobe Edition)</div>
+                <div class="summary-item-variant">Size: M</div>
+              </div>
+              <div class="summary-item-price">Rs.2,499</div>
+            </div>
+          </div>
+
+          <div class="summary-coupon">
+            <input type="text" id="couponCode" placeholder="Discount code or gift card">
+            <button onclick="applyCoupon()">Apply</button>
+          </div>
+
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>Rs.2,499.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Delivery</span>
+              <span id="delivery-cost">Free</span>
+            </div>
+            <div class="summary-row summary-row-total">
+              <span>Total</span>
+              <div>
+                <span class="summary-total-currency">PKR</span>
+                <span class="summary-total-amount" id="total-amount">Rs.2,499.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-secure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+            Secure Checkout — SSL Encrypted
+          </div>
+
+          <div class="summary-payments">
+            <span>COD</span>
+            <span>JazzCash</span>
+            <span>EasyPaisa</span>
+            <span>Visa</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="nav-logo-text">DO Store</span>
+          </a>
+          <p class="footer-brand-desc">Pakistan's most trusted destination for premium football jerseys.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Shop Collection</h4>
+          <ul>
+            <li><a href="shop.html">Club Jerseys</a></li>
+            <li><a href="shop.html">National Teams</a></li>
+            <li><a href="shop.html">Kids Edition</a></li>
+            <li><a href="shop.html">Retro Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Customer Care</h4>
+          <ul>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+92 300 1234567<br>Mon-Sat 10am to 6pm</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>support@dostore.pk<br>We reply within 24hrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DO Store. All rights reserved.</p>
+        <div class="footer-payments">
+          <span>Cash on Delivery</span>
+          <span>JazzCash</span>
+          <span>EasyPaisa</span>
+          <span>Visa / Mastercard</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    // Checkout multi-step logic
+    let currentStep = 1;
+
+    function goToStep(n) {
+      // Update review fields when going to step 3
+      if (n === 3) {
+        const email = document.getElementById('email').value || 'Not provided';
+        const fname = document.getElementById('fname').value;
+        const lname = document.getElementById('lname').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const province = document.getElementById('province').value;
+        const deliverySelected = document.querySelector('input[name="delivery"]:checked');
+        const deliveryLabel = deliverySelected ? deliverySelected.closest('.delivery-option').querySelector('.delivery-option-name').textContent : 'Standard Delivery';
+        const deliveryPrice = deliverySelected ? deliverySelected.closest('.delivery-option').querySelector('.delivery-option-price').textContent : 'Free';
+
+        document.getElementById('review-email').textContent = email;
+        document.getElementById('review-address').textContent = [fname, lname, address, city, province].filter(Boolean).join(', ') || 'Not provided';
+        document.getElementById('review-delivery').textContent = deliveryLabel + ' — ' + deliveryPrice;
+
+        // Update delivery cost
+        document.getElementById('delivery-cost').textContent = deliveryPrice;
+        const total = deliveryPrice === 'Free' ? 'Rs.2,499.00' : 'Rs.2,798.00';
+        document.getElementById('total-amount').textContent = total;
+      }
+
+      // Hide all steps
+      document.querySelectorAll('.checkout-step').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.checkout-progress-step').forEach(s => {
+        s.classList.remove('active', 'completed');
+      });
+
+      // Show current step
+      const stepEl = document.getElementById('step-' + n);
+      if (stepEl) {
+        stepEl.classList.add('active');
+        stepEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Update progress
+      for (let i = 1; i <= 3; i++) {
+        const prog = document.getElementById('progress-' + i);
+        if (!prog) continue;
+        if (i < n) prog.classList.add('completed');
+        else if (i === n) prog.classList.add('active');
+      }
+
+      currentStep = n;
+    }
+
+    function selectPayment(method, btn) {
+      document.querySelectorAll('.payment-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.payment-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + method).classList.add('active');
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('couponCode').value.trim();
+      if (code.toUpperCase() === 'WELCOME10') {
+        alert('Coupon applied! 10% discount has been added.');
+      } else if (code) {
+        alert('Invalid coupon code. Please try again.');
+      }
+    }
+
+    function placeOrder() {
+      document.querySelectorAll('.checkout-step').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.checkout-progress-step').forEach(s => s.classList.add('completed'));
+      document.getElementById('step-success').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Delivery option selection
+    document.querySelectorAll('.delivery-option').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.delivery-option').forEach(o => o.classList.remove('selected'));
+        this.classList.add('selected');
+        this.querySelector('input[type="radio"]').checked = true;
+      });
+    });
+
+    // Card number formatting
+    const cardInput = document.getElementById('card-number');
+    if (cardInput) {
+      cardInput.addEventListener('input', function() {
+        let val = this.value.replace(/\D/g, '');
+        val = val.replace(/(\d{4})/g, '$1 ').trim();
+        this.value = val;
+      });
+    }
+  </script>
+</body>
+</html>
