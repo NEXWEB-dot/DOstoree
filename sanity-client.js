@@ -20,7 +20,7 @@ export const SANITY_CONFIG = {
 
 // ── GROQ Queries ──
 export const GROQ_QUERIES = {
-  // Query 1: Fetch all products for Shop Page with team & bundle data (optimized projection)
+  // Query 1: Fetch all products for Shop Page with team data (optimized projection)
   FETCH_ALL_PRODUCTS: `*[_type == "product"] | order(_createdAt desc) {
     _id,
     title,
@@ -28,10 +28,6 @@ export const GROQ_QUERIES = {
     teamName,
     price,
     oldPrice,
-    hasBundleOffer,
-    bundleQuantity,
-    bundlePrice,
-    bundleDiscountNote,
     sizes,
     mainImage,
     badge,
@@ -39,7 +35,7 @@ export const GROQ_QUERIES = {
     reviewsCount
   }`,
 
-  // Query 2: Fetch single product with full payload (description, gallery, bundle options) by Slug
+  // Query 2: Fetch single product with full payload by Slug
   FETCH_PRODUCT_BY_SLUG: `*[_type == "product" && slug.current == $slug][0] {
     _id,
     title,
@@ -47,10 +43,6 @@ export const GROQ_QUERIES = {
     teamName,
     price,
     oldPrice,
-    hasBundleOffer,
-    bundleQuantity,
-    bundlePrice,
-    bundleDiscountNote,
     sizes,
     mainImage,
     gallery,
@@ -62,26 +54,22 @@ export const GROQ_QUERIES = {
   }`,
 };
 
-// ── Fallback Demo Products (with Rs. 2,350 & 4 for Rs. 4,200 bundle pricing) ──
+// ── Fallback Demo Products (Rs. 1,400) ──
 export const FALLBACK_PRODUCTS = [
   {
     _id: 'prod-1',
-    title: 'Barcelona away shirt 25/26 (Kobe Edition)',
-    slug: { current: 'barcelona-away-25-26-kobe-edition' },
-    teamName: 'FC Barcelona',
-    price: 2350,
-    oldPrice: 3000,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Special Bundle: 4 Jerseys for Rs. 4,200 (Only Rs. 1,050 each)',
+    title: 'BELLINGHAM JERSEY',
+    slug: { current: 'bellinghamm-jersey' },
+    teamName: 'Real Madrid',
+    price: 1400,
+    oldPrice: 1600,
     badge: 'sold-out',
     rating: 5,
     reviewsCount: 12,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     mainImage: {
       asset: { _ref: 'image-barcelona-away-jpg' },
-      alt: 'Barcelona Away Shirt 25/26 (Kobe Edition)',
+      alt: 'BELLINGHAM JERSEY',
       url: 'images/754070242_18095889170095746_1850153576216694919_n.jpg',
     },
     gallery: [
@@ -97,38 +85,9 @@ export const FALLBACK_PRODUCTS = [
         children: [
           {
             _type: 'span',
-            text: 'The exclusive Kobe Bryant tribute edition for the 25/26 season. Crafted with premium, breathable Dri-FIT technology that wicks sweat away from the skin for quicker evaporation, helping you stay dry and comfortable on and off the pitch.',
+            text: 'Crafted with premium, breathable Dri-FIT technology that wicks sweat away from the skin for quicker evaporation, helping you stay dry and comfortable on and off the pitch.',
           },
         ],
-      },
-      {
-        _type: 'block',
-        style: 'h3',
-        children: [
-          {
-            _type: 'span',
-            text: 'Product Features & Material',
-            marks: ['strong'],
-          },
-        ],
-      },
-      {
-        _type: 'block',
-        style: 'normal',
-        listItem: 'bullet',
-        children: [{ _type: 'span', text: '100% Recycled Polyester moisture-wicking fabric' }],
-      },
-      {
-        _type: 'block',
-        style: 'normal',
-        listItem: 'bullet',
-        children: [{ _type: 'span', text: 'Embroidered silicone Kobe crest & signature detailing' }],
-      },
-      {
-        _type: 'block',
-        style: 'normal',
-        listItem: 'bullet',
-        children: [{ _type: 'span', text: 'Standard fit for a relaxed, match-day feel' }],
       },
     ],
     details: [
@@ -141,22 +100,18 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     _id: 'prod-2',
-    title: 'Real Madrid away shirt 24/25 (blue)',
-    slug: { current: 'real-madrid-away-24-25-blue' },
-    teamName: 'Real Madrid',
-    price: 2350,
-    oldPrice: 2800,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Special Bundle: 4 Jerseys for Rs. 4,200',
+    title: 'MESSI INTERMIAMI JERSEY',
+    slug: { current: 'messi-intermiami-jersey' },
+    teamName: 'Other',
+    price: 1400,
+    oldPrice: 1600,
     badge: 'sale',
     rating: 5,
     reviewsCount: 8,
     sizes: ['S', 'M', 'L', 'XL'],
     mainImage: {
       asset: { _ref: 'image-rm-away-jpg' },
-      alt: 'Real Madrid away shirt 24/25 (blue)',
+      alt: 'MESSI INTERMIAMI JERSEY',
       url: 'images/image (35).jpg',
     },
     gallery: [
@@ -171,7 +126,7 @@ export const FALLBACK_PRODUCTS = [
         children: [
           {
             _type: 'span',
-            text: 'The vibrant electric blue away jersey worn by Los Blancos during their dominant 24/25 campaign. Features authentic heat-applied crests and metallic accents.',
+            text: 'Features authentic heat-applied crests and metallic accents for unmatched on-pitch style.',
           },
         ],
       },
@@ -179,22 +134,18 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     _id: 'prod-3',
-    title: 'Portugal away shirt 25/26 (long sleeve)',
-    slug: { current: 'portugal-away-25-26-long-sleeve' },
+    title: 'CRISTIANO RONALDO JERSEY',
+    slug: { current: 'cristiano-ronaldo-jersey' },
     teamName: 'Portugal',
-    price: 2350,
-    oldPrice: 2600,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Bundle Deal: 4 for Rs. 4,200',
-    badge: 'bundle',
+    price: 1400,
+    oldPrice: 1600,
+    badge: 'new',
     rating: 5,
     reviewsCount: 15,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     mainImage: {
       asset: { _ref: 'image-portugal-jpg' },
-      alt: 'Portugal away shirt 25/26 (long sleeve)',
+      alt: 'CRISTIANO RONALDO JERSEY',
       url: 'images/746927377_18094702874095746_8217654202578146858_n.jpg',
     },
     gallery: [
@@ -208,7 +159,7 @@ export const FALLBACK_PRODUCTS = [
         children: [
           {
             _type: 'span',
-            text: 'Inspired by traditional Portuguese Azulejo tile art. Long sleeve edition tailored for optimum performance, comfort, and heritage elegance.',
+            text: 'Long sleeve edition tailored for optimum performance, comfort, and heritage elegance.',
           },
         ],
       },
@@ -216,59 +167,18 @@ export const FALLBACK_PRODUCTS = [
   },
   {
     _id: 'prod-4',
-    title: 'Real Madrid dragon edition (pink)',
-    slug: { current: 'real-madrid-dragon-edition-pink' },
-    teamName: 'Real Madrid',
-    price: 2350,
-    oldPrice: 2700,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Bundle Deal: 4 for Rs. 4,200',
+    title: 'MESSI BARCELONA',
+    slug: { current: 'messi-barcelona' },
+    teamName: 'FC Barcelona',
+    price: 1400,
+    oldPrice: 1600,
     badge: 'sale',
-    rating: 5,
-    reviewsCount: 5,
-    sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: {
-      asset: { _ref: 'image-dragon-jpg' },
-      alt: 'Real Madrid dragon edition (pink)',
-      url: 'images/image (36).jpg',
-    },
-    gallery: [
-      { asset: { _ref: 'g-41' }, url: 'images/image (36).jpg', alt: 'Front View' },
-      { asset: { _ref: 'g-42' }, url: 'images/image (34).jpg', alt: 'Detail' },
-    ],
-    description: [
-      {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'Iconic dragon motif reimagined in a striking pink colorway. Designed by Yohji Yamamoto celebrating the greatness and mythical spirit of the club.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: 'prod-5',
-    title: 'Real Madrid UCL away shirt 24/25',
-    slug: { current: 'real-madrid-ucl-away-24-25' },
-    teamName: 'Real Madrid',
-    price: 2350,
-    oldPrice: 2800,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Bundle Deal: 4 for Rs. 4,200',
-    badge: 'sold-out',
     rating: 5,
     reviewsCount: 18,
     sizes: ['S', 'M', 'L', 'XL'],
     mainImage: {
       asset: { _ref: 'image-ucl-jpg' },
-      alt: 'Real Madrid UCL away shirt 24/25',
+      alt: 'MESSI BARCELONA',
       url: 'images/image (34).jpg',
     },
     gallery: [
@@ -282,117 +192,7 @@ export const FALLBACK_PRODUCTS = [
         children: [
           {
             _type: 'span',
-            text: 'Special Champions League badge edition with 15-time winner UCL sleeve patch. Premium woven fabric with precision temperature control.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: 'prod-6',
-    title: 'Real Madrid home shirt 24/25',
-    slug: { current: 'real-madrid-home-24-25' },
-    teamName: 'Real Madrid',
-    price: 2350,
-    oldPrice: 2900,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Bundle Deal: 4 for Rs. 4,200',
-    badge: 'sale',
-    rating: 5,
-    reviewsCount: 22,
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    mainImage: {
-      asset: { _ref: 'image-home-jpg' },
-      alt: 'Real Madrid home shirt 24/25',
-      url: 'images/image (37).jpg',
-    },
-    gallery: [
-      { asset: { _ref: 'g-61' }, url: 'images/image (37).jpg', alt: 'Front' },
-      { asset: { _ref: 'g-62' }, url: 'images/image (34).jpg', alt: 'Side' },
-    ],
-    description: [
-      {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'The iconic pristine all-white home kit with houndstooth micro-texture and classic black 3-stripes. The timeless look of European football royalty.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: 'prod-7',
-    title: 'Real Madrid away shirt 24/25 (half sleeve)',
-    slug: { current: 'real-madrid-away-24-25-half-sleeve' },
-    teamName: 'Real Madrid',
-    price: 2350,
-    oldPrice: 2700,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Bundle Deal: 4 for Rs. 4,200',
-    badge: 'sold-out',
-    rating: 5,
-    reviewsCount: 31,
-    sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: {
-      asset: { _ref: 'image-rm-half-jpg' },
-      alt: 'Real Madrid away shirt 24/25 (half sleeve)',
-      url: 'images/image (35).jpg',
-    },
-    gallery: [
-      { asset: { _ref: 'g-71' }, url: 'images/image (35).jpg', alt: 'Front' },
-    ],
-    description: [
-      {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'Half-sleeve precision cut away jersey featuring lightweight ergonomic cuffs and athletic fit collar.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    _id: 'prod-8',
-    title: 'Barcelona third kit 25/26 (gold edition)',
-    slug: { current: 'barcelona-third-kit-25-26-gold-edition' },
-    teamName: 'FC Barcelona',
-    price: 2350,
-    oldPrice: 3200,
-    hasBundleOffer: true,
-    bundleQuantity: 4,
-    bundlePrice: 4200,
-    bundleDiscountNote: 'Bundle Deal: 4 for Rs. 4,200',
-    badge: 'new',
-    rating: 5,
-    reviewsCount: 9,
-    sizes: ['S', 'M', 'L', 'XL'],
-    mainImage: {
-      asset: { _ref: 'image-barca-gold-jpg' },
-      alt: 'Barcelona third kit 25/26 (gold edition)',
-      url: 'images/754070242_18095889170095746_1850153576216694919_n.jpg',
-    },
-    gallery: [
-      { asset: { _ref: 'g-81' }, url: 'images/754070242_18095889170095746_1850153576216694919_n.jpg', alt: 'Front' },
-      { asset: { _ref: 'g-82' }, url: 'images/image (36).jpg', alt: 'Crest Detail' },
-    ],
-    description: [
-      {
-        _type: 'block',
-        style: 'normal',
-        children: [
-          {
-            _type: 'span',
-            text: 'Luminous gold third kit commemorating Barcelona heritage. Includes iridescent club badge and custom collar ribbon.',
+            text: 'Special edition with premium woven fabric and precision temperature control.',
           },
         ],
       },

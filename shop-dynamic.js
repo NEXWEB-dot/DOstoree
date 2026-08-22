@@ -138,17 +138,14 @@ function applyFiltersAndRender(container, countEl, pillsEl, resetBtn) {
   // 2. Price Range Filter
   if (currentFilters.priceRange !== 'all') {
     switch (currentFilters.priceRange) {
-      case 'under2000':
-        filtered = filtered.filter((p) => (p.price || 0) < 2000);
+      case 'under1500':
+        filtered = filtered.filter((p) => (p.price || 0) < 1500);
         break;
-      case '2000-2400':
-        filtered = filtered.filter((p) => (p.price || 0) >= 2000 && (p.price || 0) <= 2400);
+      case '1500-2000':
+        filtered = filtered.filter((p) => (p.price || 0) >= 1500 && (p.price || 0) <= 2000);
         break;
-      case 'above2400':
-        filtered = filtered.filter((p) => (p.price || 0) > 2400);
-        break;
-      case 'bundle':
-        filtered = filtered.filter((p) => p.hasBundleOffer || p.badge === 'bundle' || p.bundlePrice);
+      case 'above2000':
+        filtered = filtered.filter((p) => (p.price || 0) > 2000);
         break;
     }
   }
@@ -178,10 +175,9 @@ function updateActivePills(pillsEl, resetBtn) {
   }
   if (currentFilters.priceRange !== 'all') {
     const priceLabels = {
-      under2000: 'Under Rs. 2,000',
-      '2000-2400': 'Rs. 2,000 – Rs. 2,400',
-      above2400: 'Above Rs. 2,400',
-      bundle: '⚡ 4 for Rs. 4,200',
+      under1500: 'Under Rs. 1,500',
+      '1500-2000': 'Rs. 1,500 – Rs. 2,000',
+      above2000: 'Above Rs. 2,000',
     };
     pills.push({ label: priceLabels[currentFilters.priceRange] || currentFilters.priceRange, key: 'priceRange' });
   }
@@ -259,7 +255,7 @@ function renderProducts(products, container, countEl) {
 }
 
 /**
- * Generate Product Card HTML with team, bundle badge and pricing
+ * Generate Product Card HTML with team, badge and pricing
  */
 function createProductCardHtml(product, index) {
   const slug = product.slug?.current || product.slug || '';
@@ -284,25 +280,13 @@ function createProductCardHtml(product, index) {
     badgeHtml = '<span class="product-badge new">New</span>';
   } else if (product.badge === 'sold-out') {
     badgeHtml = '<span class="product-badge sold-out">Sold out</span>';
-  } else if (product.badge === 'bundle' || product.hasBundleOffer) {
-    badgeHtml = '<span class="product-badge bundle">⚡ 4 for Rs. 4,200</span>';
   }
 
   // Team subtitle
   const teamHtml = product.teamName ? `<div class="product-team-tag">${escapeHtml(product.teamName)}</div>` : '';
 
-  // Bundle callout tag on card
-  let bundleCallout = '';
-  if (product.hasBundleOffer || product.bundlePrice) {
-    bundleCallout = `
-      <div class="product-bundle-tag">
-        <span>Bundle Offer:</span> 4 for Rs. ${Number(product.bundlePrice || 4200).toLocaleString()}
-      </div>
-    `;
-  }
-
-  // Price formatting (Single jersey price: Rs. 2,350)
-  const priceFormatted = `Rs.${Number(product.price || 2350).toLocaleString()}.00 PKR`;
+  // Price formatting (Single jersey price: Rs. 1,400)
+  const priceFormatted = `Rs.${Number(product.price || 1400).toLocaleString()}.00 PKR`;
   let priceHtml = `<span class="product-price">${priceFormatted}</span>`;
   if (product.oldPrice && product.oldPrice > product.price) {
     const oldPriceFormatted = `Rs.${Number(product.oldPrice).toLocaleString()}.00 PKR`;
@@ -350,7 +334,6 @@ function createProductCardHtml(product, index) {
           <div class="product-pricing">
             ${priceHtml}
           </div>
-          ${bundleCallout}
           <span class="product-choose-btn">Choose options</span>
         </div>
       </a>
