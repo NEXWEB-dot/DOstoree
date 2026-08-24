@@ -10,8 +10,16 @@ let currentFilters = {
   search: '',
   priceRange: 'all',
   team: 'all',
+  category: 'all',  // club | national | kids | retro | all
   sortBy: 'featured',
 };
+
+// Map URL ?category= param to filter value
+const urlCategory = new URLSearchParams(window.location.search).get('category') || 'all';
+if (['club','national','kids','retro','all'].includes(urlCategory)) {
+  currentFilters.category = urlCategory;
+}
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   const productsGrid = document.getElementById('productsGrid');
@@ -23,6 +31,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   const resetFiltersBtn = document.getElementById('resetFilters');
   const filterCount = document.querySelector('.filter-count');
   const activePillsContainer = document.getElementById('activeFilterPills');
+  const categoryTabs = document.querySelectorAll('.cat-tab');
+
+  // Pre-select category tab based on URL param
+  if (currentFilters.category !== 'all') {
+    categoryTabs.forEach(tab => {
+      tab.classList.remove('active');
+      if (tab.dataset.category === currentFilters.category) {
+        tab.classList.add('active');
+      }
+    });
+  }
+
+  // Category tab click
+  categoryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      categoryTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentFilters.category = tab.dataset.category;
+      applyFiltersAndRender(productsGrid, filterCount, activePillsContainer, resetFiltersBtn);
+    });
+  });
 
   if (!productsGrid) return;
 
@@ -82,11 +111,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (resetFiltersBtn) {
       resetFiltersBtn.addEventListener('click', () => {
-        currentFilters = { search: '', priceRange: 'all', team: 'all', sortBy: 'featured' };
+        currentFilters = { search: '', priceRange: 'all', team: 'all', category: 'all', sortBy: 'featured' };
         if (searchInput) { searchInput.value = ''; clearSearchBtn.style.display = 'none'; }
         if (priceFilter) priceFilter.value = 'all';
         if (teamFilter) teamFilter.value = 'all';
         if (sortSelect) sortSelect.value = 'featured';
+        // Reset category tabs
+        categoryTabs.forEach(t => {
+          t.classList.remove('active');
+          if (t.dataset.category === 'all') t.classList.add('active');
+        });
         applyFiltersAndRender(productsGrid, filterCount, activePillsContainer, resetFiltersBtn);
       });
     }
@@ -126,7 +160,52 @@ function populateTeamFilter(products, selectEl) {
 function applyFiltersAndRender(container, countEl, pillsEl, resetBtn) {
   let filtered = [...allProducts];
 
-  // 1. Search Query Filter
+  // 1. Category Tab Filter
+  if (currentFilters.category !== 'all') {
+    // Define which teamNames belong to which category
+    const CLUB_TEAMS = [
+      'fc barcelona', 'barcelona', 'real madrid', 'manchester city', 'man city',
+      'arsenal', 'liverpool', 'manchester united', 'man utd', 'chelsea',
+      'juventus', 'ac milan', 'inter milan', 'psg', 'paris saint-germain',
+      'bayern munich', 'atletico madrid', 'borussia dortmund', 'bvb',
+      'tottenham', 'napoli', 'porto', 'ajax'
+    ];
+    const NATIONAL_TEAMS = [
+      'portugal', 'spain', 'brazil', 'argentina', 'england', 'france',
+      'germany', 'italy', 'netherlands', 'croatia', 'morocco', 'pakistan',
+      'other', 'national'
+    ];
+    const KIDS_TEAMS = ['kids', 'junior', 'youth'];
+    const RETRO_TEAMS = ['retro', 'vintage', 'classic'];
+
+    filtered = filtered.filter((p) => {
+      const name = (p.teamName || '').toLowerCase().trim();
+      const title = (p.title || '').toLowerCase();
+      switch (currentFilters.category) {
+        case 'club':
+          return CLUB_TEAMS.some(t => name.includes(t)) ||
+                 (!NATIONAL_TEAMS.some(t => name.includes(t)) &&
+                  !KIDS_TEAMS.some(t => name.includes(t) || title.includes(t)) &&
+                  !RETRO_TEAMS.some(t => name.includes(t) || title.includes(t)) &&
+                  name !== 'other');
+        case 'national':
+          return NATIONAL_TEAMS.some(t => name.includes(t)) ||
+                 title.includes('national') || title.includes('spain') ||
+                 title.includes('portugal') || title.includes('brazil') ||
+                 title.includes('argentina') || title.includes('england') ||
+                 title.includes('france');
+        case 'kids':
+          return KIDS_TEAMS.some(t => name.includes(t) || title.includes(t));
+        case 'retro':
+          return RETRO_TEAMS.some(t => name.includes(t) || title.includes(t)) ||
+                 title.includes('retro') || title.includes('vintage') || title.includes('classic');
+        default:
+          return true;
+      }
+    });
+  }
+
+  // 2. Search Query Filter
   if (currentFilters.search) {
     filtered = filtered.filter((p) => {
       const titleMatch = (p.title || '').toLowerCase().includes(currentFilters.search);
@@ -135,7 +214,7 @@ function applyFiltersAndRender(container, countEl, pillsEl, resetBtn) {
     });
   }
 
-  // 2. Price Range Filter
+  // 3. Price Range Filter
   if (currentFilters.priceRange !== 'all') {
     switch (currentFilters.priceRange) {
       case 'under1500':
@@ -150,20 +229,21 @@ function applyFiltersAndRender(container, countEl, pillsEl, resetBtn) {
     }
   }
 
-  // 3. Team Filter
+  // 4. Team Filter
   if (currentFilters.team !== 'all') {
     filtered = filtered.filter((p) => p.teamName === currentFilters.team);
   }
 
-  // 4. Sort
+  // 5. Sort
   filtered = sortProducts(filtered, currentFilters.sortBy);
 
-  // 5. Update Active Filter Pills & Reset Button
+  // 6. Update Active Filter Pills & Reset Button
   updateActivePills(pillsEl, resetBtn);
 
-  // 6. Render
+  // 7. Render
   renderProducts(filtered, container, countEl);
 }
+
 
 /**
  * Update UI Filter Pills

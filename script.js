@@ -72,38 +72,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 4. Mobile Menu Toggle ──
+  // ── 4. Mobile Menu Toggle — Premium Side Drawer ──
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
 
+  // Create backdrop element once
+  let backdrop = document.querySelector('.mobile-nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'mobile-nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function openDrawer() {
+    navLinks.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const spans = mobileMenuBtn.querySelectorAll('span');
+    spans[0].style.transform = 'rotate(45deg) translate(4px, 5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(4px, -5px)';
+  }
+
+  function closeDrawer() {
+    navLinks.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    const spans = mobileMenuBtn.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  }
+
   if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const isOpen = navLinks.classList.contains('open');
-      const spans = mobileMenuBtn.querySelectorAll('span');
-      
-      if (isOpen) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-        document.body.style.overflow = 'hidden';
+      if (navLinks.classList.contains('open')) {
+        closeDrawer();
       } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
-        document.body.style.overflow = '';
+        openDrawer();
       }
     });
 
+    // Close when clicking backdrop
+    backdrop.addEventListener('click', closeDrawer);
+
+    // Close when clicking any nav link
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        const spans = mobileMenuBtn.querySelectorAll('span');
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeDrawer();
+      }
     });
   }
 
