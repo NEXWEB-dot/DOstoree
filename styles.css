@@ -515,14 +515,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   transform-origin: center;
 }
 
-/* Mobile Nav — Luxury High-Contrast Dark Drawer */
+/* Mobile Nav — Luxury High-Contrast Edition */
 .mobile-nav-backdrop {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 9998;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -543,7 +543,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   left: auto !important;
   width: min(340px, 88vw) !important;
   height: 100vh !important;
-  background: #111110 !important;
+  background: #ffffff !important;
   padding: 0 0 40px 0 !important;
   margin: 0 !important;
   gap: 0 !important;
@@ -551,8 +551,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   overflow-y: auto !important;
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch;
-  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.6) !important;
-  animation: navDrawerIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.18) !important;
+  animation: navDrawerIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
 }
 
 /* Hide desktop dropdown menu completely inside mobile drawer */
@@ -568,8 +568,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   align-items: center !important;
   justify-content: space-between !important;
   padding: 20px 24px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  background: #0a0a09 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background: #fbfbfa !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 10 !important;
@@ -579,24 +579,25 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
 
 .nav-links.open .drawer-brand {
   font-family: var(--ff-heading) !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 800 !important;
-  letter-spacing: 3px !important;
+  letter-spacing: 2.5px !important;
   text-transform: uppercase !important;
-  color: #ffffff !important;
+  color: #111110 !important;
 }
 
 .nav-links.open .drawer-close-btn {
-  width: 36px !important;
-  height: 36px !important;
+  width: 34px !important;
+  height: 34px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
+  color: #111110 !important;
+  background: #ebebeb !important;
   border-radius: 50% !important;
   border: none !important;
-  font-size: 22px !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
   line-height: 1 !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
@@ -604,13 +605,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
 
 .nav-links.open .drawer-close-btn:hover,
 .nav-links.open .drawer-close-btn:active {
-  background: rgba(255, 255, 255, 0.25) !important;
-  transform: scale(1.08) !important;
+  background: #111110 !important;
+  color: #ffffff !important;
+  transform: scale(1.06) !important;
 }
 
 /* Drawer list items — always solid visible */
 .nav-links.open > li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
   width: 100% !important;
   opacity: 1 !important;
   display: block !important;
@@ -626,12 +628,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   font-family: var(--ff-heading) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
-  color: #f0ede6 !important;
+  color: #111110 !important;
   padding: 16px 24px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  letter-spacing: 0.4px !important;
+  letter-spacing: 0.3px !important;
   text-decoration: none !important;
   background: transparent !important;
   width: 100% !important;
@@ -647,8 +649,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
 .nav-links.open > li > a:hover,
 .nav-links.open > li > a:active,
 .nav-links.open .nav-dropdown-toggle:hover {
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: #ffffff !important;
+  background: #f7f6f2 !important;
+  color: #000000 !important;
   padding-left: 28px !important;
 }
 
@@ -656,17 +658,17 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
 .nav-links.open > li > a.active,
 .nav-links.open .nav-link.active,
 .nav-links.open .nav-dropdown-toggle.active {
-  color: var(--clr-accent, #e5a93c) !important;
-  background: rgba(229, 169, 60, 0.1) !important;
+  color: #000000 !important;
+  background: #f2efe9 !important;
   font-weight: 700 !important;
-  border-left: 3px solid var(--clr-accent, #e5a93c) !important;
-  padding-left: 21px !important;
+  border-left: 3.5px solid #111110 !important;
+  padding-left: 20.5px !important;
 }
 
 .nav-links.open .dropdown-chevron {
   width: 18px !important;
   height: 18px !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #6a6762 !important;
   stroke: currentColor !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   flex-shrink: 0;
@@ -675,9 +677,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
 /* Mobile Category Accordion */
 .mobile-sub-menu {
   display: none;
-  background: rgba(0, 0, 0, 0.45);
-  padding: 4px 0 8px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #f7f6f2;
+  padding: 6px 0 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .mobile-sub-menu.open {
@@ -704,7 +706,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   font-family: var(--ff-heading) !important;
   font-size: 13.5px !important;
   font-weight: 500 !important;
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: #333330 !important;
   text-decoration: none !important;
   transition: all 0.2s ease !important;
   box-sizing: border-box !important;
@@ -712,8 +714,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
 
 .mobile-sub-item:hover,
 .mobile-sub-item:active {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.08) !important;
+  color: #000000 !important;
+  background: #ebe8e0 !important;
   padding-left: 40px !important;
 }
 
@@ -721,10 +723,20 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--ff-heading); color: var(--clr-black)
   font-size: 9px !important;
   padding: 2px 7px !important;
   border-radius: 100px !important;
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: #111110 !important;
   color: #ffffff !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px;
+}
+
+.mobile-sub-item .badge.gold {
+  background: #d4af37 !important;
+  color: #111110 !important;
+}
+
+.mobile-sub-item .badge.hot {
+  background: #c43f3f !important;
+  color: #ffffff !important;
 }
 
 @keyframes navDrawerIn {
