@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 4. Mobile Menu Toggle & Dropdown Accordion — Premium Side Drawer ──
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
-  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
   const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
 
   // Create backdrop element once
@@ -126,12 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    if (drawerCloseBtn) {
-      drawerCloseBtn.addEventListener('click', (e) => {
+    // Close button inside drawer
+    document.querySelectorAll('.drawer-close-btn, #drawerCloseBtn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         closeDrawer();
       });
-    }
+    });
 
     // Close when clicking backdrop
     backdrop.addEventListener('click', closeDrawer);
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dropdown mobile accordion toggle
     dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', (e) => {
-        const isMobile = window.innerWidth <= 768 || navLinks.classList.contains('open');
+        const isMobile = window.innerWidth <= 860 || navLinks.classList.contains('open');
         if (isMobile) {
           e.preventDefault();
           e.stopPropagation();
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.setAttribute('aria-expanded', String(!isOpen));
             const chevron = toggle.querySelector('.dropdown-chevron');
             if (chevron) {
-              chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+              chevron.style.transform = !isOpen ? 'rotate(180deg)' : '';
             }
           }
         }
@@ -166,6 +167,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    // Close drawer if resized to desktop viewport
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860 && navLinks.classList.contains('open')) {
         closeDrawer();
       }
     });
