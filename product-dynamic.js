@@ -287,6 +287,17 @@ function renderGallery(product) {
   const mainUrl = urlFor(images[0]).width(800).quality(80).auto('format').url();
   mainImg.src = mainUrl;
   mainImg.alt = images[0]?.alt || product.title;
+  mainImg.onerror = () => {
+    mainImg.onerror = null;
+    mainImg.src = 'images/746927377_18094702874095746_8217654202578146858_n.jpg';
+  };
+
+  // If only 1 image, hide thumbnail strip
+  if (images.length <= 1) {
+    thumbsContainer.style.display = 'none';
+    return;
+  }
+  thumbsContainer.style.display = 'flex';
 
   // Render Thumbnails (200×200, quality 65 — small thumbnails don't need high quality)
   thumbsContainer.innerHTML = images.map((img, idx) => {
@@ -302,6 +313,7 @@ function renderGallery(product) {
            alt="${escapeHtml(alt)}" 
            tabindex="0"
            role="button"
+           onerror="this.style.display='none'"
            aria-label="View ${escapeHtml(alt)}" />
     `;
   }).join('');
