@@ -17,6 +17,7 @@
   </div>
 
   <!-- Navigation -->
+  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
       <a href="index.html" class="nav-logo">
@@ -25,15 +26,107 @@
       </a>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
-        <li><a href="index.html#featured">Featured</a></li>
-        <li><a href="index.html#bestsellers">Best Sellers</a></li>
-        <li><a href="index.html#testimonials">Reviews</a></li>
+        <!-- Mobile Drawer Header -->
+        <li class="drawer-header mobile-only">
+          <span class="drawer-brand">DO STORE</span>
+          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+        </li>
+
+        <li style="--i: 1;"><a href="index.html">Home</a></li>
+        
+        <!-- Football Jerseys Dropdown -->
+        <li class="nav-dropdown" style="--i: 2;">
+          <a href="shop.html" class="nav-dropdown-toggle active" id="jerseysDropdownToggle" aria-haspopup="true" aria-expanded="false">
+            Football Jerseys
+            <svg class="dropdown-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </a>
+          
+          <!-- Desktop Dropdown Menu -->
+          <div class="nav-dropdown-menu" id="jerseysDropdownMenu">
+            <a href="shop.html?category=all" class="dropdown-item">
+              <span class="dropdown-item-icon">⚽</span>
+              <div class="dropdown-item-text">
+                <div class="dropdown-item-title">All Jerseys <span class="dropdown-badge">ALL</span></div>
+                <span class="dropdown-item-sub">Explore full match-day collection</span>
+              </div>
+            </a>
+            <a href="shop.html?category=club" class="dropdown-item">
+              <span class="dropdown-item-icon">🏆</span>
+              <div class="dropdown-item-text">
+                <div class="dropdown-item-title">Club Jerseys <span class="dropdown-badge hot">HOT</span></div>
+                <span class="dropdown-item-sub">Real Madrid, Barca, Man City & more</span>
+              </div>
+            </a>
+            <a href="shop.html?category=retro" class="dropdown-item">
+              <span class="dropdown-item-icon">⏳</span>
+              <div class="dropdown-item-text">
+                <div class="dropdown-item-title">Retro Jerseys <span class="dropdown-badge gold">CLASSIC</span></div>
+                <span class="dropdown-item-sub">Iconic vintage & heritage kits</span>
+              </div>
+            </a>
+            <a href="shop.html?category=standard" class="dropdown-item">
+              <span class="dropdown-item-icon">⚡</span>
+              <div class="dropdown-item-text">
+                <div class="dropdown-item-title">Standard Jersey <span class="dropdown-badge">FAN</span></div>
+                <span class="dropdown-item-sub">Comfortable athletic stadium fit</span>
+              </div>
+            </a>
+            <a href="shop.html?category=embroidery" class="dropdown-item">
+              <span class="dropdown-item-icon">✨</span>
+              <div class="dropdown-item-text">
+                <div class="dropdown-item-title">Embroidery Jersey <span class="dropdown-badge">PREMIUM</span></div>
+                <span class="dropdown-item-sub">High-density stitched crests & badges</span>
+              </div>
+            </a>
+            <a href="shop.html?category=player" class="dropdown-item">
+              <span class="dropdown-item-icon">🌟</span>
+              <div class="dropdown-item-text">
+                <div class="dropdown-item-title">Player Jersey <span class="dropdown-badge gold">PRO MATCH</span></div>
+                <span class="dropdown-item-sub">Authentic match-spec performance</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Mobile Submenu Accordion -->
+          <div class="mobile-sub-menu" id="mobileJerseysSubMenu">
+            <a href="shop.html?category=all" class="mobile-sub-item">
+              <span>⚽ All Jerseys</span>
+              <span class="badge">ALL</span>
+            </a>
+            <a href="shop.html?category=club" class="mobile-sub-item">
+              <span>🏆 Club Jerseys</span>
+              <span class="badge">HOT</span>
+            </a>
+            <a href="shop.html?category=retro" class="mobile-sub-item">
+              <span>⏳ Retro Classics</span>
+              <span class="badge">RETRO</span>
+            </a>
+            <a href="shop.html?category=standard" class="mobile-sub-item">
+              <span>⚡ Standard Jersey</span>
+              <span class="badge">FAN</span>
+            </a>
+            <a href="shop.html?category=embroidery" class="mobile-sub-item">
+              <span>✨ Embroidery Jersey</span>
+              <span class="badge">PREMIUM</span>
+            </a>
+            <a href="shop.html?category=player" class="mobile-sub-item">
+              <span>🌟 Player Jersey</span>
+              <span class="badge">PRO</span>
+            </a>
+          </div>
+        </li>
+
+        <li style="--i: 3;"><a href="shop.html?category=club">Club Jerseys</a></li>
+        <li style="--i: 4;"><a href="shop.html?category=retro">Retro Jerseys</a></li>
+        <li style="--i: 5;"><a href="shop.html?category=player">Player Edition</a></li>
+        <li style="--i: 6;"><a href="shop.html" class="active">All Options</a></li>
+        <li style="--i: 7;"><a href="index.html#testimonials">Reviews</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button class="nav-action-btn" aria-label="Search">
+        <button class="nav-action-btn" aria-label="Search" onclick="document.getElementById('searchInput')?.focus()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
@@ -43,7 +136,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
           </svg>
         </button>
-        <button class="nav-action-btn" aria-label="Cart">
+        <button class="nav-action-btn" aria-label="Cart" onclick="window.location.href='checkout.html'">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
           </svg>
@@ -63,7 +156,7 @@
     <div class="container">
       <span class="section-eyebrow">All Products</span>
       <h1 class="shop-header-title">Shop All <strong>Football Jerseys</strong></h1>
-      <p class="shop-header-sub">Premium quality kits for every fan — club, national, and retro collections</p>
+      <p class="shop-header-sub">Premium quality kits for every fan — standard, embroidery, player version & retro collections</p>
     </div>
   </div>
 
@@ -75,9 +168,12 @@
       <div class="category-filter-tabs fade-in" id="categoryTabs">
         <button class="cat-tab active" data-category="all">All Jerseys</button>
         <button class="cat-tab" data-category="club">Club Jerseys</button>
+        <button class="cat-tab" data-category="retro">Retro Kits</button>
+        <button class="cat-tab" data-category="standard">Standard Jersey</button>
+        <button class="cat-tab" data-category="embroidery">Embroidery Jersey</button>
+        <button class="cat-tab" data-category="player">Player Jersey</button>
         <button class="cat-tab" data-category="national">National Teams</button>
         <button class="cat-tab" data-category="kids">Kids Edition</button>
-        <button class="cat-tab" data-category="retro">Retro Kits</button>
       </div>
 
       <!-- Premium Filter Toolbar -->

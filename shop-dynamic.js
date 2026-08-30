@@ -16,7 +16,7 @@ let currentFilters = {
 
 // Map URL ?category= param to filter value
 const urlCategory = new URLSearchParams(window.location.search).get('category') || 'all';
-if (['club','national','kids','retro','all'].includes(urlCategory)) {
+if (['club','national','kids','retro','standard','embroidery','player','all'].includes(urlCategory)) {
   currentFilters.category = urlCategory;
 }
 
@@ -181,6 +181,9 @@ function applyFiltersAndRender(container, countEl, pillsEl, resetBtn) {
     filtered = filtered.filter((p) => {
       const name = (p.teamName || '').toLowerCase().trim();
       const title = (p.title || '').toLowerCase();
+      const detailsText = Array.isArray(p.details) ? p.details.join(' ').toLowerCase() : '';
+      const badge = (p.badge || '').toLowerCase();
+
       switch (currentFilters.category) {
         case 'club':
           return CLUB_TEAMS.some(t => name.includes(t)) ||
@@ -199,6 +202,16 @@ function applyFiltersAndRender(container, countEl, pillsEl, resetBtn) {
         case 'retro':
           return RETRO_TEAMS.some(t => name.includes(t) || title.includes(t)) ||
                  title.includes('retro') || title.includes('vintage') || title.includes('classic');
+        case 'standard':
+          return title.includes('standard') || detailsText.includes('standard') ||
+                 detailsText.includes('recycled') || !title.includes('player');
+        case 'embroidery':
+          return detailsText.includes('embroider') || title.includes('embroidery') ||
+                 title.includes('embroidered') || detailsText.includes('crest') ||
+                 title.includes('barcelona') || title.includes('madrid') || title.includes('jersey');
+        case 'player':
+          return title.includes('player') || detailsText.includes('match') ||
+                 detailsText.includes('authentic') || badge.includes('pro') || badge.includes('new');
         default:
           return true;
       }
